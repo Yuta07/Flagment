@@ -1,14 +1,25 @@
 <%= stylesheet_link_tag "home/index", :media => "all" %>
 <h1>Home#index</h1>
-<div id="open">
-  <p>Open Signup Window</p>
+<div>
+  <p>Signup</p>
 </div>
-<div id="modal" class="hidden">
-  <p>Name</p>
-  <p>Email</p>
-    <div id="close">
-      <p>Close</p>
-    </div>
+<div>
+  <%= form_for(@user, url:users_signup_path) do |f| %>
+    <%= render 'shared/errors' %>
+    <!-- name -->
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <!-- email -->
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <!-- password -->
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <!-- password_confirmation -->
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+    <!-- submit -->
+    <%= f.submit "Create my account", class: "btn btn-primary" %>
+  <% end %>
 </div>
-<div id="mask" class="hidden"></div>
 <%= javascript_include_tag "modal.js" %>

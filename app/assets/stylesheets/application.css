@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ @charset "utf-8";
+
+ body {
+   font-size: 14px;
+   font-family: Verdana, sans-serif;
+   letter-spacing: 1.4;
+ }
