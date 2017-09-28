@@ -1,10 +1,15 @@
 <%= stylesheet_link_tag "home/index", :media => "all" %>
-<h1>Home#index</h1>
+<% if logged_in? %>
+<%= link_to "Profile", current_user %>
+<h1>ログイン済みです。</h1>
+<%= current_user.name %>
+<%= link_to "Log out", logout_path, method: :delete %>
+<% else %>
 <div>
-  <p>Signup</p>
+  <h2>Signup</h2>
 </div>
 <div>
-  <%= form_for(@user, url:users_signup_path) do |f| %>
+  <%= form_for(@user, url: users_signup_path) do |f| %>
     <%= render 'shared/errors' %>
     <!-- name -->
     <%= f.label :name %>
@@ -19,7 +24,28 @@
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation %>
     <!-- submit -->
-    <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <%= f.submit "Create my account" %>
   <% end %>
 </div>
+<div>
+  <h2>Log in</h2>
+</div>
+<div>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <!-- email -->
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <!-- password -->
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <!-- checkbox -->
+    <%= f.label :remember_me do %>
+    <%= f.check_box :remember_me %>
+    <span>Remember me on this computer</span>
+    <% end %>
+    <!-- submit -->
+    <%= f.submit "Log in" %>
+    <% end %>
+</div>
+<% end %>
 <%= javascript_include_tag "modal.js" %>
