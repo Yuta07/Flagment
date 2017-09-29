@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   def show
@@ -18,6 +17,7 @@ class UsersController < ApplicationController
   def create
     @user=User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Created new account"
       redirect_to @user
     else
@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
 
+  #privateメソッド
   private
 
     def user_params
