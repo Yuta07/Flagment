@@ -1,0 +1,15 @@
+current directory: /Users/yuta/railsworks/En-camp/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+/Users/yuta/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20171113-2330-dps42w.rb extconf.rb
+creating Makefile
+
+current directory: /Users/yuta/railsworks/En-camp/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/yuta/railsworks/En-camp/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/yuta/railsworks/En-camp/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20171113-2330-1p7y138/bindex

@@ -1,0 +1,35 @@
+(function() { this.JST || (this.JST = {}); this.JST["ajv/lib/dot/allOf"] = {{# def.definitions }}
+  {{# def.errors }}
+  {{# def.setupKeyword }}
+  {{# def.setupNextLevel }}
+  
+  {{
+    var $currentBaseId = $it.baseId
+      , $allSchemasEmpty = true;
+  }}
+  
+  {{~ $schema:$sch:$i }}
+    {{? {{# def.nonEmptySchema:$sch }} }}
+      {{
+        $allSchemasEmpty = false;
+        $it.schema = $sch;
+        $it.schemaPath = $schemaPath + '[' + $i + ']';
+        $it.errSchemaPath = $errSchemaPath + '/' + $i;
+      }}
+  
+      {{# def.insertSubschemaCode }}
+  
+      {{# def.ifResultValid }}
+    {{?}}
+  {{~}}
+  
+  {{? $breakOnError }}
+    {{? $allSchemasEmpty }}
+      if (true) {
+    {{??}}
+      {{= $closingBraces.slice(0,-1) }}
+    {{?}}
+  {{?}}
+  
+  {{# def.cleanUp }};
+}).call(this);

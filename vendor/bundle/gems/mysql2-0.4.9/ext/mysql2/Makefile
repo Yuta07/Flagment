@@ -5,19 +5,19 @@ SHELL = /bin/sh
 V = 0
 Q1 = $(V:1=)
 Q = $(Q1:0=@)
-ECHO1 = $(V:1=@:)
-ECHO = $(ECHO1:0=@echo)
+ECHO1 = $(V:1=@ :)
+ECHO = $(ECHO1:0=@ echo)
 NULLCMD = :
 
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /Users/yuta/.rbenv/versions/2.3.4/include/ruby-2.3.0
+topdir = /Users/yuta/.rbenv/versions/2.4.1/include/ruby-2.4.0
 hdrdir = $(topdir)
-arch_hdrdir = /Users/yuta/.rbenv/versions/2.3.4/include/ruby-2.3.0/x86_64-darwin16
+arch_hdrdir = /Users/yuta/.rbenv/versions/2.4.1/include/ruby-2.4.0/x86_64-darwin17
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/Users/yuta/.rbenv/versions/2.3.4
+prefix = $(DESTDIR)/Users/yuta/.rbenv/versions/2.4.1
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20170913-1609-10ijpbv
-sitelibdir = $(DESTDIR)./.gem.20170913-1609-10ijpbv
+sitearchdir = $(DESTDIR)./.gem.20171110-73649-814bnd
+sitelibdir = $(DESTDIR)./.gem.20171110-73649-814bnd
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -50,8 +50,8 @@ dvidir = $(docdir)
 htmldir = $(docdir)
 infodir = $(datarootdir)/info
 docdir = $(datarootdir)/doc/$(PACKAGE)
-oldincludedir = $(DESTDIR)/usr/include
-includedir = $(SDKROOT)$(prefix)/include
+oldincludedir = $(SDKROOT)/usr/include
+includedir = $(prefix)/include
 localstatedir = $(prefix)/var
 sharedstatedir = $(prefix)/com
 sysconfdir = $(prefix)/etc
@@ -72,21 +72,22 @@ LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static -framework CoreFoundation
 empty =
 OUTFLAG = -o $(empty)
 COUTFLAG = -o $(empty)
+CSRCFLAG = $(empty)
 
 RUBY_EXTCONF_H = 
-cflags   =  $(optflags) $(debugflags) $(warnflags)
-cxxflags =  $(optflags) $(debugflags) $(warnflags)
+cflags   = $(optflags) $(debugflags) $(warnflags)
+cxxflags = $(optflags) $(debugflags) $(warnflags)
 optflags = -O3 -fno-fast-math
 debugflags = -ggdb3
-warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens
+warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens
 CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS)  -O3 -Wno-error=shorten-64-to-32  -pipe -DFULL_SSL_MODE_SUPPORT -Wno-bad-function-cast -Wno-conditional-uninitialized -Wno-covered-switch-default -Wno-declaration-after-statement -Wno-disabled-macro-expansion -Wno-documentation-unknown-command -Wno-missing-field-initializers -Wno-missing-variable-declarations -Wno-padded -Wno-reserved-id-macro -Wno-sign-conversion -Wno-static-in-inline -Wno-switch-enum -Wno-undef -Wno-unreachable-code -Wno-used-but-marked-unused $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) -I/usr/local/Cellar/mysql/5.7.18_1/include/mysql
 DEFS     = 
-CPPFLAGS = -DHAVE_RB_ABSINT_SIZE -DHAVE_RB_ABSINT_SINGLEBIT_P -DHAVE_RUBY_THREAD_H -DHAVE_RB_THREAD_CALL_WITHOUT_GVL -DHAVE_RB_WAIT_FOR_SINGLE_FD -DHAVE_RB_HASH_DUP -DHAVE_RB_INTERN3 -DHAVE_RB_BIG_CMP -DHAVE_MYSQL_H -DHAVE_ERRMSG_H -DHAVE_MYSQLD_ERROR_H -DHAVE_CONST_SSL_MODE_DISABLED -DHAVE_CONST_SSL_MODE_PREFERRED -DHAVE_CONST_SSL_MODE_REQUIRED -DHAVE_CONST_SSL_MODE_VERIFY_CA -DHAVE_CONST_SSL_MODE_VERIFY_IDENTITY -DHAVE_MYSQL_NET_VIO -DHAVE_ST_NET_VIO -DHAVE_CONST_MYSQL_ENABLE_CLEARTEXT_PLUGIN -I/Users/yuta/.rbenv/versions/2.3.4/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
+CPPFLAGS = -DHAVE_RB_ABSINT_SIZE -DHAVE_RB_ABSINT_SINGLEBIT_P -DHAVE_RUBY_THREAD_H -DHAVE_RB_THREAD_CALL_WITHOUT_GVL -DHAVE_RB_WAIT_FOR_SINGLE_FD -DHAVE_RB_HASH_DUP -DHAVE_RB_INTERN3 -DHAVE_RB_BIG_CMP -DHAVE_MYSQL_H -DHAVE_ERRMSG_H -DHAVE_MYSQLD_ERROR_H -DHAVE_CONST_SSL_MODE_DISABLED -DHAVE_CONST_SSL_MODE_PREFERRED -DHAVE_CONST_SSL_MODE_REQUIRED -DHAVE_CONST_SSL_MODE_VERIFY_CA -DHAVE_CONST_SSL_MODE_VERIFY_IDENTITY -DHAVE_MYSQL_NET_VIO -DHAVE_ST_NET_VIO -DHAVE_CONST_MYSQL_ENABLE_CLEARTEXT_PLUGIN -I/Users/yuta/.rbenv/versions/2.4.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = -L. -L/Users/yuta/.rbenv/versions/2.3.4/lib  -fstack-protector -L/usr/local/lib -Wl,-rpath,/usr/local/Cellar/mysql/5.7.18_1/lib
-dldflags = -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
+ldflags  = -L. -L/Users/yuta/.rbenv/versions/2.4.1/lib  -fstack-protector -L/usr/local/lib -Wl,-rpath,/usr/local/Cellar/mysql/5.7.18_1/lib
+dldflags = -L/Users/yuta/.rbenv/versions/2.4.1/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -dynamic -bundle
@@ -101,12 +102,12 @@ RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
 
-arch = x86_64-darwin16
+arch = x86_64-darwin17
 sitearch = $(arch)
-ruby_version = 2.3.0
+ruby_version = 2.4.0
 ruby = $(bindir)/$(RUBY_BASE_NAME)
 RUBY = $(ruby)
-ruby_headers = $(hdrdir)/ruby.h $(hdrdir)/ruby/ruby.h $(hdrdir)/ruby/defines.h $(hdrdir)/ruby/missing.h $(hdrdir)/ruby/intern.h $(hdrdir)/ruby/st.h $(hdrdir)/ruby/subst.h $(arch_hdrdir)/ruby/config.h
+ruby_headers = $(hdrdir)/ruby.h $(hdrdir)/ruby/backward.h $(hdrdir)/ruby/ruby.h $(hdrdir)/ruby/defines.h $(hdrdir)/ruby/missing.h $(hdrdir)/ruby/intern.h $(hdrdir)/ruby/st.h $(hdrdir)/ruby/subst.h $(arch_hdrdir)/ruby/config.h
 
 RM = rm -f
 RM_RF = $(RUBY) -run -e rm -- -rf
@@ -121,7 +122,6 @@ TOUCH = exit >
 #### End of system configuration section. ####
 
 preload = 
-
 libpath = . $(libdir)
 LIBPATH =  -L. -L$(libdir)
 DEFFILE = 
@@ -138,7 +138,8 @@ LIBS =  -L/usr/local/Cellar/mysql/5.7.18_1/lib -lmysqlclient -lssl -lcrypto  -lp
 ORIG_SRCS = client.c infile.c mysql2_ext.c result.c statement.c
 SRCS = $(ORIG_SRCS) 
 OBJS = client.o infile.o mysql2_ext.o result.o statement.o
-HDRS = $(srcdir)/client.h $(srcdir)/infile.h $(srcdir)/mysql2_ext.h $(srcdir)/mysql_enc_name_to_ruby.h $(srcdir)/mysql_enc_to_ruby.h $(srcdir)/result.h $(srcdir)/statement.h $(srcdir)/wait_for_single_fd.h
+HDRS = $(srcdir)/client.h $(srcdir)/mysql2_ext.h $(srcdir)/result.h $(srcdir)/statement.h $(srcdir)/mysql_enc_name_to_ruby.h $(srcdir)/mysql_enc_to_ruby.h $(srcdir)/wait_for_single_fd.h $(srcdir)/infile.h
+LOCAL_HDRS = 
 TARGET = mysql2
 TARGET_NAME = mysql2
 TARGET_ENTRY = Init_$(TARGET_NAME)
@@ -153,9 +154,9 @@ RUBYLIBDIR    = $(sitelibdir)$(target_prefix)
 RUBYARCHDIR   = $(sitearchdir)$(target_prefix)
 HDRDIR        = $(rubyhdrdir)/ruby$(target_prefix)
 ARCHHDRDIR    = $(rubyhdrdir)/$(arch)/ruby$(target_prefix)
-
-TARGET_SO     = $(DLLIB)
-CLEANLIBS     = $(TARGET).bundle 
+TARGET_SO_DIR =
+TARGET_SO     = $(TARGET_SO_DIR)$(DLLIB)
+CLEANLIBS     = $(TARGET_SO) 
 CLEANOBJS     = *.o  *.bak
 
 all:    $(DLLIB)
@@ -182,17 +183,19 @@ distclean: clean distclean-so distclean-static distclean-rb-default distclean-rb
 realclean: distclean
 install: install-so install-rb
 
-install-so: $(DLLIB) $(TIMESTAMP_DIR)/.RUBYARCHDIR.-.mysql2.time
+install-so: $(DLLIB) $(TIMESTAMP_DIR)/.sitearchdir.-.mysql2.time
 	$(INSTALL_PROG) $(DLLIB) $(RUBYARCHDIR)
 clean-static::
 	-$(Q)$(RM) $(STATIC_LIB)
-install-rb: pre-install-rb install-rb-default
-install-rb-default: pre-install-rb-default
+install-rb: pre-install-rb do-install-rb install-rb-default
+install-rb-default: pre-install-rb-default do-install-rb-default
 pre-install-rb: Makefile
 pre-install-rb-default: Makefile
+do-install-rb:
+do-install-rb-default:
 pre-install-rb-default:
 	@$(NULLCMD)
-$(TIMESTAMP_DIR)/.RUBYARCHDIR.-.mysql2.time:
+$(TIMESTAMP_DIR)/.sitearchdir.-.mysql2.time:
 	$(Q) $(MAKEDIRS) $(@D) $(RUBYARCHDIR)
 	$(Q) $(TOUCH) $@
 
@@ -204,53 +207,53 @@ site-install-rb: install-rb
 
 .cc.o:
 	$(ECHO) compiling $(<)
-	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $<
+	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $(CSRCFLAG)$<
 
 .cc.S:
 	$(ECHO) translating $(<)
-	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $<
+	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $(CSRCFLAG)$<
 
 .mm.o:
 	$(ECHO) compiling $(<)
-	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $<
+	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $(CSRCFLAG)$<
 
 .mm.S:
 	$(ECHO) translating $(<)
-	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $<
+	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $(CSRCFLAG)$<
 
 .cxx.o:
 	$(ECHO) compiling $(<)
-	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $<
+	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $(CSRCFLAG)$<
 
 .cxx.S:
 	$(ECHO) translating $(<)
-	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $<
+	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $(CSRCFLAG)$<
 
 .cpp.o:
 	$(ECHO) compiling $(<)
-	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $<
+	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $(CSRCFLAG)$<
 
 .cpp.S:
 	$(ECHO) translating $(<)
-	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $<
+	$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $(CSRCFLAG)$<
 
 .c.o:
 	$(ECHO) compiling $(<)
-	$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $<
+	$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $(CSRCFLAG)$<
 
 .c.S:
 	$(ECHO) translating $(<)
-	$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -S $<
+	$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -S $(CSRCFLAG)$<
 
 .m.o:
 	$(ECHO) compiling $(<)
-	$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $<
+	$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $(CSRCFLAG)$<
 
 .m.S:
 	$(ECHO) translating $(<)
-	$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -S $<
+	$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -S $(CSRCFLAG)$<
 
-$(DLLIB): $(OBJS) Makefile
+$(TARGET_SO): $(OBJS) Makefile
 	$(ECHO) linking shared-object mysql2/$(DLLIB)
 	-$(Q)$(RM) $(@)
 	$(Q) $(LDSHARED) -o $@ $(OBJS) $(LIBPATH) $(DLDFLAGS) $(LOCAL_LIBS) $(LIBS)

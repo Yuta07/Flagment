@@ -1,0 +1,19 @@
+# pack-refs with: peeled fully-peeled 
+0903bd38bd2686e31bffc0792d06548e9b4f8367 refs/heads/cache-control
+c531362a881302a2e8c8393ce5c9f2603a699917 refs/heads/extendable-base-config
+b71db699e6937895b745cea6828a50d1d506037c refs/heads/master
+3a825ddedc206248729a5328f3517ba8add20573 refs/heads/react-example
+3e9549b85548567f228b32fa7007bf4e9fdc219e refs/heads/revert-to-engine
+ceb88c729cabe83357b999811166120bef437b24 refs/heads/service-workers
+5dd6f80ee17fc6eec7621ba4f5019bd9b70bc02c refs/heads/subprocess
+5583a269e354cb81291dbc356eccbf647c8a0cdb refs/tags/v1.0.0
+^47e935c3679348bf5c26ea0400e8d90330ff1209
+3c488f9f4022735a37093a1c1718eb9a7d720102 refs/tags/v1.1.0
+56bd687798b624f9e0cea7b8fe3c89923a79ea63 refs/tags/v1.2.0
+55bd71de20eb16563f41fc7a80e9b01e6476b6bb refs/tags/v2.0.0
+29bf0bd0a21fbdbcb1d19c9be4687df7cea3274d refs/tags/v3.0.0
+^7cc9040b6c3232f8c92b007bbc6fbbd22a0312d3
+5ce80c84cc389aee057484ec55807f976d8a803f refs/tags/v3.0.1
+^fb8dd8c09ccc9d93ef3e084838e6e0f0683aaeb0
+4659aef5111fbd56f56dc3913b2b279999afdee2 refs/tags/v3.0.2
+^b160e6bbcb95135aca0b21250a3fd6f25e71ca9e
