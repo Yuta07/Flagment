@@ -10,7 +10,7 @@ Things you may want to cover:
 _5.1.4_
 
 - **Ruby version**  
-_2.3.4_
+_2.4.1_
 
 - **Database creation**  
 _mysql_
