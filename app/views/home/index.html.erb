@@ -5,6 +5,9 @@
 <%= link_to "Settings", edit_user_path(current_user) %>
 <%= link_to "Log out", logout_path, method: :delete %>
 <% else %>
+<div class="note-start">
+  <button>はじめる</button>
+</div>
 <div>
   <h2>Signup</h2>
 </div>
@@ -13,16 +16,16 @@
 <div>
   <h2>Log in</h2>
 </div>
-<div>
+<div id ="login-form">
   <%= form_for(:session, url: login_path) do |f| %>
     <!-- email -->
-    <%= f.label :email %>
+    <%= f.label :Email %>
     <%= f.email_field :email %>
     <!-- password -->
-    <%= f.label :password %>
+    <%= f.label :Password %>
     <%= f.password_field :password %>
     <!-- checkbox -->
-    <%= f.label :remember_me do %>
+    <%= f.label :Remember_me do %>
       <%= f.check_box :remember_me %>
       <span>Remember me on this computer</span>
     <% end %>
