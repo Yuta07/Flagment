@@ -5,9 +5,6 @@
 <%= link_to "Settings", edit_user_path(current_user) %>
 <%= link_to "Log out", logout_path, method: :delete %>
 <% else %>
-<div class="note-start">
-  <button>はじめる</button>
-</div>
 <div>
   <h2>Signup</h2>
 </div>
@@ -35,3 +32,6 @@
   <% end %>
 </div>
 <% end %>
+<div class="note-start">
+  <button>はじめる</button>
+</div>
