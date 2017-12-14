@@ -1,0 +1,31 @@
+<% if logged_in? %>
+  <div class="log-container">
+    <%= link_to "Profile", current_user %>
+    <h1>ログイン済みです。</h1>
+    <%= current_user.name %>
+    <%= link_to "Settings", edit_user_path(current_user) %>
+    <%= link_to "Log out", logout_path, method: :delete %>
+  </div>
+<% else %>
+  <header class="Global-nav">
+     <div class="header-Line">
+  	   <h1 class="Fm-logo">
+       <%= link_to "Share notes for You and Team", root_path, class: "logo-img" %>
+     </h1>
+  		 <nav class="Fm-userNav">
+  		 <ul class="Fm-list">
+  				<% if logged_in? %>
+  				<li class="Fm-menu"><%= link_to "current_user.name", current_user, id: "user-btn",class: "Fm-Headlink" %></li>
+  				<!-- <li class="Fm-menu">%= link_to 'プロフィール変更', edit_user_registration_path, class: "Fm-link" %</li> -->
+          <!-- <li class="Fm-menu">%= link_to '設定', edit_user_registration_path, class: "Fm-link" %</li> -->
+          <!-- <li class="Fm-menu">%= link_to 'お知らせ', edit_user_registration_path, class: "Fm-link" %</li> -->
+          <li class="Fm-menu"><%= link_to 'Log out', destroy_user_session_path, method: :delete, id: "user-btn",class: "Fm-Headlink" %></li>
+  				<% else %>
+  				<li class="Fm-menu"><%= link_to 'Sign up', root_path, id: "user-btn",class: "Fm-Headlink" %></li>
+  				<li class="Fm-menu"><%= link_to 'Log in', root_path, id: "user-btn",class: "Fm-Headlink" %></li>
+  				<% end %>
+  			</ul>
+  		</nav>
+  	</div>
+  </header>
+<% end %>

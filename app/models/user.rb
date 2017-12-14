@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest
+  mount_uploader :user_image, PictureUploader
 
   validates :name, presence:true, length:{maximum: 50},
             uniqueness:{case_sensitive: true}
