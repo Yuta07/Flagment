@@ -21,6 +21,7 @@ gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+gem 'coffee-script-source', '1.8.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -30,9 +31,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
-gem 'carrierwave',             '1.1.0'
-gem 'mini_magick',             '4.7.0'
-gem 'fog',                     '1.40.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -57,6 +55,7 @@ group :development do
   gem 'sprockets'
   gem 'therubyracer'
   gem 'autoprefixer-rails'
+  gem 'webpacker', github: 'rails/webpacker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

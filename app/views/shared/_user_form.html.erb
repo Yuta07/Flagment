@@ -15,9 +15,5 @@
     <%= f.password_field :password_confirmation %>
     <!-- submit -->
     <%= f.submit yield(:button_text) %>
-    <span class="picture">
-    <%= image_tag @user.user_image.url if @user.user_image? %>
-    <%= f.file_field :user_image %>
-    </span>
   <% end %>
 </div>

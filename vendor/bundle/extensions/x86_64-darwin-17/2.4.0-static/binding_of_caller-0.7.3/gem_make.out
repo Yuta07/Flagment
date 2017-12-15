@@ -1,0 +1,16 @@
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/binding_of_caller-0.7.3/ext/binding_of_caller
+/Users/yuta/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20171214-5621-12j85nf.rb extconf.rb
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/binding_of_caller-0.7.3/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/binding_of_caller-0.7.3/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/binding_of_caller-0.7.3/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20171214034559) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
-    t.string "user_image"
   end
 
 end
