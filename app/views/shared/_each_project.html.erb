@@ -1,6 +1,7 @@
 <% projects.each do |pro| %>
   <li id="project-<%= pro.id %>" class="pro-list">
     <p class="pro-name"><%= pro.name %></p>
+    <p class="pro-name"><%= image_tag pro.picture.url, :size => "200x200" if pro.picture? %></p>
     <p class="pro-time">
       Posted <%= time_ago_in_words(pro.created_at) %> ago.
     </p>

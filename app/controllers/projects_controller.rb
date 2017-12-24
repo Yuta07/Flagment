@@ -34,8 +34,9 @@ class ProjectsController < ApplicationController
 
   #privateメソッド
 
+  #name is project title
   def project_params
-    params.require(:project).permit(:name)
+    params.require(:project).permit(:name,:picture)
   end
 
   def correct_user
