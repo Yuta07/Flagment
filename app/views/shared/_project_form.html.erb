@@ -4,6 +4,9 @@
       <!-- name -->
       <%= f.label :title %>
       <%= f.text_field :name %>
+      <p class="pro-picture">
+      <%= f.file_field :picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'  %>
+      </p>
       <%= f.submit "Post", class: "btn btn-primary" %>
   <% end %>
 </div>
