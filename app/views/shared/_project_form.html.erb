@@ -1,0 +1,9 @@
+<div>
+  <%= form_for(project) do |f| %>
+    <%= render 'shared/errors', object: f.object %>
+      <!-- name -->
+      <%= f.label :title %>
+      <%= f.text_field :name %>
+      <%= f.submit "Post", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -4,6 +4,7 @@ module SessionsHelper
     session[:user_id]=user.id
   end
 
+  #セッションのユーザーを取り出す
   def current_user
     if (user_id=session[:user_id])
       @current_user ||= User.find_by(id: user_id)

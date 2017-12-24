@@ -1,0 +1,11 @@
+<% projects.each do |pro| %>
+  <li id="project-<%= pro.id %>" class="pro-list">
+    <p class="pro-name"><%= pro.name %></p>
+    <p class="pro-time">
+      Posted <%= time_ago_in_words(pro.created_at) %> ago.
+    </p>
+    <% if current_user?(pro.user) %>
+      <%= link_to "delete", pro, method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </li>
+<% end %>

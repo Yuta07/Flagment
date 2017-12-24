@@ -19,4 +19,4 @@ if ARGV.first
   end
 end
 
-load Gem.bin_path('listen', 'listen', version)
+load Gem.activate_bin_path('listen', 'listen', version)

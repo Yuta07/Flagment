@@ -67,7 +67,7 @@ header.Global-nav{
     h1.Fm-logo{
       .logo-img{
       display: inline-block;
-      width: 120px;
+      width: 240px;
       height: 48px;
       vertical-align: middle;
       overflow: hidden;
@@ -75,7 +75,7 @@ header.Global-nav{
       word-wrap: normal;
       overflow-wrap: normal;
       white-space: nowrap;
-      background: url('/assets/scratch-logo-index.svg');
+      background: url('/assets/scratch-font-logo-index.svg');
       background-repeat: no-repeat;
       }
     }
@@ -120,8 +120,8 @@ nav.Fm-userNav{
 .footer-nav{
   position: absolute;
   width: 100%;
-  bottom: 0;
   left: 0;
+  // bottom: 0;
   padding: 8px 0;
   z-index: 99;
   .footer-Line{

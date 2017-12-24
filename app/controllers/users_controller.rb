@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user=User.find_by(params[:id])
+    @user = User.find_by(params[:id])
     redirect_to root_url and return unless @user.activated?
   end
 
@@ -49,14 +49,8 @@ class UsersController < ApplicationController
 
 
   #before_action
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:error] = "Please login"
-      redirect_to login_url
-    end
-  end
 
+  #正しいユーザーかどうか
   def correct_user
     @user=User.find(params[:id])
     unless current_user?(@user)
@@ -65,6 +59,10 @@ class UsersController < ApplicationController
     end
   end
 
+  #管理者かどうか
+  def admin_user
+    redirect_to root_url unless current_user.admin?
+  end
 
   #privateメソッド
   private

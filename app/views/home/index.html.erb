@@ -1,11 +1,23 @@
-<% provide(:title, "Home") %>
 <% if logged_in? %>
 <!-- ログイン済みの場合のIndex -->
-<section class="scratch-note">
-  <h1 class="pro-title">Coming Soon...</h1>
+<div class="log-container">
+  <h1>ログイン済みです。</h1>
+  <section class="scratch-note">
+    <% if @current_user.projects.any? %>
+      <h3>Join project(<%= @current_user.projects.count %>)</h3>
+      <ul class="project-contain">
+        <%= render partial: 'shared/each_project', locals: { projects: @current_user.projects } %>
+      </ul>
+    <% end %>
+  </section>
+  <div class="pro-row">
+    <section class="pro_form">
+      <%= render partial: 'shared/project_form', locals: { project: @current_user.projects.build } %>
+    </section>
+  </div>
 </section>
 <% else %>
-<!-- ログインされていない場合のIndex -->
+<!-- ログインしていない場合のIndex -->
 <section class="nolog-container">
   <div class="main-contain">
     <div class="signup">

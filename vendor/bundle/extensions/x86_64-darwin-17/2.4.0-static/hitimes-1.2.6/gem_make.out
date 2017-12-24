@@ -1,0 +1,20 @@
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/hitimes-1.2.6/ext/hitimes/c
+/Users/yuta/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20171218-1854-1wgwi3e.rb extconf.rb
+creating Makefile
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/hitimes-1.2.6/ext/hitimes/c
+make "DESTDIR=" clean
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/hitimes-1.2.6/ext/hitimes/c
+make "DESTDIR="
+compiling hitimes.c
+compiling hitimes_instant_clock_gettime.c
+compiling hitimes_instant_osx.c
+compiling hitimes_instant_windows.c
+compiling hitimes_interval.c
+compiling hitimes_stats.c
+linking shared-object hitimes/2.4/hitimes.bundle
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/hitimes-1.2.6/ext/hitimes/c
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 hitimes.bundle ./.gem.20171218-1854-118pw61/hitimes/2.4
