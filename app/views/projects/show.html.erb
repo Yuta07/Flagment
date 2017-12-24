@@ -1,13 +1,7 @@
-<h1>Users#show</h1>
+<h1>Projects#show</h1>
 <% if logged_in? %>
-<%= link_to 'Edit', edit_user_path(current_user) %>
-<p><%= @current_user.name %></p>
-<p><%= @current_user.email %></p>
 <div class="pro-show">
-  <% if @user.projects.any? %>
-  <h3>Created project(<%= @user.projects.count %>)</h3>
-  <%= link_to 'All Project', root_path %>
-  <% end %>
+  <h3>Created Card(<%= current_user.name %>)</h3>
 </div>
 <% else %>
 <h3>ログインしてください</h3>
