@@ -6,6 +6,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @user = User.new
+    if logged_in?
+      @project = current_user.projects.find(params[:id])
+      @cards = @project.cards
+    end
   end
 
   def edit
@@ -27,7 +32,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    flash[:success] = "Project deleteed"
+    flash[:success] = "Project was deleted"
     redirect_to request.referrer || root_url
   end
 

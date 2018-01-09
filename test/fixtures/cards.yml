@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sublect: MyString
+  content: MyText
+  project: one
+
+two:
+  sublect: MyString
+  content: MyText
+  project: two

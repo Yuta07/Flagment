@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   #ユーザー削除でプロジェクトも削除する
   has_many :projects, dependent: :destroy
+  has_many :cards, through: :projects, dependent: :destroy
 
   attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest

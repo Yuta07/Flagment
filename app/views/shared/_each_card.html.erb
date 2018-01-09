@@ -1,0 +1,13 @@
+<% cards.each do |card| %>
+  <li id="card-<%= card.id %>" class="card-list">
+    <%= link_to project_card_path(card.id) do %>
+    <p class="card-subject"><%= card.subject %></p>
+    <p class="card-time">
+      Posted <%= time_ago_in_words(card.created_at) %> ago.
+    </p>
+    <% end %>
+    <% if current_user?(@project.user) %>
+      <%= link_to "delete", project_card_path(@project, card), method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </li>
+<% end %>

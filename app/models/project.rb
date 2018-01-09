@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
+  has_many :cards, dependent: :destroy
   #新規作成順にする
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader

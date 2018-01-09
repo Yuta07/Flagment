@@ -40,6 +40,10 @@ class PictureUploader < CarrierWave::Uploader::Base
      %w(jpg jpeg gif png)
    end
 
+   def default_url
+     'default.jpg' 
+   end
+
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
    def filename
