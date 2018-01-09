@@ -1,0 +1,9 @@
+<h1>Projects#show</h1>
+<% if logged_in? %>
+<div class="card-show">
+  <h3><%= current_user.name %></h3>
+</div>
+<% else %>
+<h3>ログインしてください</h3>
+<%= render 'shared/login_form' %>
+<% end %>

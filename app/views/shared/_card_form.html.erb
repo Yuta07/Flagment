@@ -1,0 +1,9 @@
+<div>
+  <%= form_for(card, url: project_cards_path(project)) do |f| %>
+    <%= render 'shared/errors', object: f.object %>
+      <!-- subject -->
+      <%= f.label :subject %>
+      <%= f.text_field :subject %>
+      <%= f.submit "Resist", class: "btn btn-primary", data:{disable_with:'Resist'} %>
+  <% end %>
+</div>
