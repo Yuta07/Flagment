@@ -67,6 +67,21 @@ class User < ApplicationRecord
     reset_sent_at < 1.hours.ago
   end
 
+  #user_imageがある場合
+  def set_image(file)
+    if !file.nil?
+      file_name = file.original_filename
+      perms = ['.jpg','.gif','.jpeg','.png']
+      if !perms.include?(File.extname(file_name).downcase)
+        flash[:error]= 'Upload is only image file.'
+      elsif file.size > 2.megabyte
+        flash[:error]= 'Fire size is up to 2 megabytes.'
+      else
+      File.open("public/user_images/#{file_name}", 'wb') { |f| f.write(file.read) }
+      self.user_image = file_name
+      end
+    end
+  end
 
   #ここからprivateメソッド
   private
