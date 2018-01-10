@@ -20,6 +20,9 @@ class UsersController < ApplicationController
 
   def create
     @user=User.new(user_params)
+    #user_image
+    file = params[:user][:user_image]
+    @user.set_image(file)
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
@@ -32,7 +35,10 @@ class UsersController < ApplicationController
 
   def update
     @user=User.find(params[:id])
+    file = params[:user][:user_image]
+    @user.set_image(file)
     if @user.update_attributes(user_params)
+      binding.pry
       flash[:success]="Update your account"
       redirect_to @user
     else
@@ -67,8 +73,8 @@ class UsersController < ApplicationController
   #privateメソッド
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :user_image)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 
 end

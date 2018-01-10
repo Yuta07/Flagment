@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105115719) do
+ActiveRecord::Schema.define(version: 20180110023804) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "subject"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180105115719) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "user_image"
   end
 
   add_foreign_key "cards", "projects"

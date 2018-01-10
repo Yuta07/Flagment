@@ -1,7 +1,9 @@
-<h1>Users#show</h1>
+<h1 style="margin-bottom:80px;">Users#show</h1>
 <% if logged_in? %>
 <%= link_to 'Edit', edit_user_path(current_user) %>
 <p><%= @current_user.name %></p>
+<!-- application helperからメソッド呼び出し -->
+<%= image_for(@current_user, :size => "120x120") %>
 <p><%= @current_user.email %></p>
 <div class="pro-show">
   <% if @user.projects.any? %>

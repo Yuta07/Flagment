@@ -1,6 +1,9 @@
 <div>
-  <%= form_for(@user) do |f| %>
+  <%= form_for(@user, multipart: true) do |f| %>
     <%= render 'shared/errors', object: f.object %>
+    <% if logged_in?%>
+      <%= image_for(@current_user, :size => "80x80") %>
+    <% end %>
     <!-- name -->
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -13,6 +16,9 @@
     <!-- password_confirmation -->
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation %>
+    <!-- user_image -->
+    <%= f.label :user_image %>
+    <%= f.file_field :user_image, class: "user-image" %>
     <!-- submit -->
     <%= f.submit yield(:button_text) %>
   <% end %>
