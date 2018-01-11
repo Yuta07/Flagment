@@ -19,6 +19,7 @@ class CardsController < ApplicationController
       t.project_id = params[:project_id]
       t.subject = params[:card][:subject]
       t.user_id = current_user.id
+      t.card_picture = params[:card][:card_picture]
     end
     if @card.save
       flash[:success] = "Card created."

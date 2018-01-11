@@ -4,6 +4,9 @@
       <!-- subject -->
       <%= f.label :subject %>
       <%= f.text_field :subject %>
+      <p class="card-picture">
+      <%= f.file_field :card_picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'  %>
+      </p>
       <%= f.submit "Resist", class: "btn btn-primary", data:{disable_with:'Resist'} %>
   <% end %>
 </div>

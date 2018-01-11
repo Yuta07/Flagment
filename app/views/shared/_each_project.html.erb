@@ -2,11 +2,11 @@
   <li id="project-<%= pro.id %>" class="pro-list">
     <%= link_to project_path(pro.id) do %>
     <p class="pro-name"><%= pro.name %></p>
-    <% if pro.picture? %>
-      <p class="pro-image"><%= image_tag pro.picture.url, :size => "200x200" %></p>
-    <% else %>
-      <p class="pro-image"><%= image_tag 'default.jpg', :size => "200x200" %></p>
-    <% end %>
+      <% if pro.picture? %>
+        <p class="pro-image"><%= image_tag pro.picture.url, :size => "200x200" %></p>
+      <% else %>
+        <p class="pro-image"><%= image_tag 'default.jpg', :size => "200x200" %></p>
+      <% end %>
     <% end %>
     <p class="pro-time">
       Posted <%= time_ago_in_words(pro.created_at) %> ago.

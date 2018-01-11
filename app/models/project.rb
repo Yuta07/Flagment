@@ -1,6 +1,8 @@
 class Project < ApplicationRecord
   belongs_to :user
   has_many :cards, dependent: :destroy
+  has_many :categories, through: :project_categories
+  has_many :project_categories, dependent: :destroy
   #新規作成順にする
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
@@ -14,4 +16,5 @@ class Project < ApplicationRecord
       errors.add(:picture, "should be less than 4MB")
     end
   end
+
 end

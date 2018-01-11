@@ -1,13 +1,18 @@
 <% cards.each do |card| %>
   <li id="card-<%= card.id %>" class="card-list">
-    <%= link_to project_card_path(card.id) do %>
+    <%= link_to card_path(card.id) do %>
     <p class="card-subject"><%= card.subject %></p>
+      <% if card.card_picture? %>
+        <p class="card-image"><%= image_tag card.card_picture.url, :size => "120x120" %></p>
+      <% else %>
+        <p class="card-image"><%= image_tag 'default.jpg', :size => "120x120" %></p>
+      <% end %>
     <p class="card-time">
       Posted <%= time_ago_in_words(card.created_at) %> ago.
     </p>
     <% end %>
     <% if current_user?(@project.user) %>
-      <%= link_to "delete", project_card_path(@project, card), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "delete", card_path(@project, card), method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   </li>
 <% end %>
