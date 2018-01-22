@@ -1,7 +1,6 @@
 <% if logged_in? %>
 <!-- ログイン済みの場合のIndex -->
-<div class="log-container">
-  <h1>ログイン済みです。</h1>
+<div class="note-container">
   <section class="scratch-note">
     <% if @current_user.projects.any? %>
       <h3>Join project(<%= @current_user.projects.count %>)</h3>
@@ -11,28 +10,34 @@
     <% end %>
   </section>
   <div class="pro-row">
-    <section class="pro_form">
+    <div class="pro_form">
       <%= render partial: 'shared/project_form', locals: { project: @current_user.projects.build } %>
-    </section>
+    </div>
   </div>
 </div>
 <% else %>
 <!-- ログインしていない場合のIndex -->
-<section class="nolog-container">
-  <div class="main-contain">
-    <div class="signup">
-      <h2>Signup</h2>
-    <% provide(:button_text, 'Create my account') %>
-    <%= render 'shared/user_form' %>
-    </div>
-    <div class="login">
-      <h2>Log in</h2>
+<main class="fm-index">
+  <div class="fm-container">
+      <div class="fm-index-logo">
+        <%= image_tag("/assets/Fm-index-logo.svg", :class => "fmscratch-logo", :alt => "FmScratch logo") %>
+      </div>
+      <p class="fm-make">Marshal info into notes</p>
+      <p class="fm-description"><strong>Fm Scratch</strong>は情報整理のための共有サービスです。</p>
+      <div class="fm-start">
+        <div id="sign-open" class="sign-btn">
+          Sign up
+        </div>
+        <div id="log-open" class="sign-btn">
+          Log in
+        </div>
+      </div>
+      <% provide(:button_text, 'Sign up') %>
+      <%= render 'shared/user_form' %>
       <%= render 'shared/login_form' %>
-    </div>
-    <div class="note-start">
-      <h1 class="hero">Share notes For You and Team</h1>
-      <button class="hero-button">はじめる</button>
-    </div>
   </div>
-</section>
+</main>
+<div id="mask" class="hidden"></div>
+<%= javascript_include_tag 'sign-modal', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'log-modal', 'data-turbolinks-track': 'reload' %>
 <% end %>

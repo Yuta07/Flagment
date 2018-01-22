@@ -47,7 +47,7 @@ class CardsController < ApplicationController
   #privateメソッド
 
   def correct_user
-    @card = current_user.cards.find_by!(project_id: params[:project_id])
+    @card = current_user.cards.find_by!(id: params[:id])
     redirect_to root_url if @card.nil?
   end
 

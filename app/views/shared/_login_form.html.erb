@@ -1,18 +1,19 @@
-<div id ="login-form">
-<%= form_for(:session, url: login_path) do |f| %>
-  <!-- email -->
-  <%= f.label :Email %>
-  <%= f.email_field :email %>
-  <!-- password -->
-  <%= f.label :Password %>
-  <%= f.password_field :password %>
-  <!-- checkbox -->
-  <%= f.label :Remember_me do %>
-    <%= f.check_box :remember_me %>
-    <span>Remember me on this computer</span>
+<div id="log-modal" class="hidden">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <div class="form-style">
+      <h1 class="form-title">Log in</h1>
+        <!-- email -->
+        <%= f.email_field :email, placeholder: "メールアドレス", class: "form-field" %>
+        <!-- password -->
+        <%= f.password_field :password, placeholder: "パスワード", class: "form-field" %>
+        <!-- checkbox -->
+        <%= f.label :Remember_me do %>
+          <%= f.check_box :remember_me %>
+          <span class="remember-span">Remember me on this computer</span>
+        <% end %>
+        <%= link_to("Forget password?",new_password_reset_path, class: "forget-pass") %>
+        <!-- submit -->
+        <%= f.submit "Log in", class: "submit-btn sub-log" %>
+    </div>
   <% end %>
-  <%= link_to("Forget password?",new_password_reset_path) %>
-  <!-- submit -->
-  <%= f.submit "Log in" %>
-<% end %>
 </div>

@@ -1,25 +1,25 @@
-<div>
+<div id="sign-modal" class="hidden">
   <%= form_for(@user, multipart: true) do |f| %>
-    <%= render 'shared/errors', object: f.object %>
-    <% if logged_in?%>
-      <%= image_for(@current_user, :size => "80x80") %>
-    <% end %>
-    <!-- name -->
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <!-- email -->
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <!-- password -->
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <!-- password_confirmation -->
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation %>
-    <!-- user_image -->
-    <%= f.label :user_image %>
-    <%= f.file_field :user_image, class: "user-image" %>
-    <!-- submit -->
-    <%= f.submit yield(:button_text) %>
+    <div class="form-style">
+      <h1 class="form-title">Sign up</h1>
+      <%= render 'shared/errors', object: f.object %>
+      <% if logged_in?%>
+        <%= image_for(@current_user, :size => "80x80") %>
+      <% end %>
+      <!-- name -->
+      <%= f.text_field :name, placeholder: "お名前", class: "form-field" %>
+      <!-- email -->
+      <%= f.email_field :email, placeholder: "メールアドレス", class: "form-field" %>
+      <!-- password -->
+      <%= f.password_field :password, placeholder: "パスワード", class: "form-field" %>
+      <!-- password_confirmation -->
+      <%= f.password_field :password_confirmation, placeholder: "パスワードの確認", class: "form-field" %>
+      <!-- user_image -->
+      <%= f.label :ユーザー画像, class: "image-font" %>
+      <%= f.file_field :user_image, class: "image-field" %>
+      <p class="any">※選択されていない場合、デフォルトが適用されます。</p>
+      <!-- submit -->
+      <%= f.submit yield(:button_text), class: "submit-btn sub-sign" %>
+    </div>
   <% end %>
 </div>

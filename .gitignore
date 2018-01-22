@@ -17,7 +17,7 @@
 /yarn-error.log
 
 .byebug_history
+/config/database.yml
 /public/packs
 /public/packs-test
 /node_modules
-/config/database.yml

@@ -1,11 +1,19 @@
 <footer class="footer-nav">
-	 <div class="footer-Line">
-		 <nav class="Fm-userNav">
-			<ul class="Fm-list foot-list">
-			  <li class="Fm-menu"><%= link_to "About", root_path, class: "Fm-Footlink" %></li>
-			  <li class="Fm-menu"><%= link_to "Contact", root_path, class: "Fm-Footlink" %></li>
-			  <li class="Fm-menu"><%= link_to "Help", root_path, class: "Fm-Footlink" %></li>
+	<div class="footer-line">
+		<nav class="fm-commonnav">
+			<ul class="fm-footer-list">
+				<li class="fm-footer-menu"><%= link_to 'Help', root_path, class: "fm-footlink" %></li>
+				<li class="fm-footer-menu"><%= link_to 'Contact', root_path, class: "fm-footlink" %></li>
+				<li class="fm-footer-menu"><%= link_to 'Feature', root_path, class: "fm-footlink" %></li>
 			</ul>
-		 </nav>
+		</nav>
+		<div class="footer-bottom">
+			<div class="footer-logo-span">
+				<%= link_to "", root_path, class: "footer-logo" %>
+			</div>
+			<div class="footer-rights">
+				<span class="fm-copyright">all rights reserved FmScratch 2017</span>
+			</div>
+		</div>
 	</div>
 </footer>

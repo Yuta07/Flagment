@@ -1,29 +1,24 @@
-<% if logged_in? %>
-<header class="Global-nav">
-   <div class="header-Line">
-     <h1 class="Fm-logo"><%= link_to "Share notes for You and Team", root_path, class: "logo-img" %>
-     </h1>
-     <nav class="Fm-userNav">
-       <ul class="Fm-list">
-         <li class="Fm-menu"><%= link_to @current_user.name, current_user, id: "user-btn",class: "Fm-Headlink" %></li>
-         <li class="Fm-menu"><%= link_to 'Settings', root_path, class: "Fm-Headlink" %></li>
-         <li class="Fm-menu"><%= link_to 'Notification', root_path, class: "Fm-Headlink" %></li>
-         <li class="Fm-menu"><%= link_to 'Log out', logout_path, method: :delete, id: "user-btn",class: "Fm-Headlink" %></li>
-       </ul>
-     </nav>
-   </div>
-</header>
-<% else %>
-<header class="Global-nav">
-    <div class="header-Line">
-  	  <h1 class="Fm-logo"><%= link_to "Share notes for You and Team", root_path, class: "logo-img" %>
-      </h1>
-  		<nav class="Fm-userNav">
-  		<ul class="Fm-list">
-  			<li class="Fm-menu"><%= link_to 'Sign up', root_path, id: "user-btn",class: "Fm-Headlink" %></li>
-  			<li class="Fm-menu"><%= link_to 'Log in', root_path, id: "user-btn",class: "Fm-Headlink" %></li>
-  		</ul>
-  	</nav>
+<header class="global-nav">
+  <div class="header-line">
+    <%= link_to "", root_path, class: "logo-img head-btn" %>
   </div>
+  <% if logged_in? %>
+    <div class="header-line">
+      <nav class="fm-userNav">
+        <ul class="fm-header-list">
+          <li class="fm-menu"><%= link_to @current_user.name, current_user, class: "fm-userlink" %></li>
+          <li class="fm-menu"><%= link_to 'Settings', root_path, class: "fm-userlink" %></li>
+          <li class="fm-menu"><%= link_to 'Notice', root_path, class: "fm-userlink" %></li>
+          <li class="fm-menu"><%= link_to 'Log out', logout_path, method: :delete, class: "fm-userlink" %></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="cover"></div>
+  <% else %>
+    <div class="header-line">
+      <%= link_to root_path, class: "fm-googlelink head-btn" do %>
+        <span class="google-log">Google Login</sapn>
+      <% end %>
+    </div>
+  <% end %>
 </header>
-<% end %>

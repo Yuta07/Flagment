@@ -14,6 +14,7 @@
  *= require_self
  */
 
+@import "font-awesome";
 @charset "UTF-8";
 
 /*-------------------
@@ -34,9 +35,21 @@ list-style: none;
 
 a{
   text-decoration: none;
+  color: #efefef;
     &:hover{
-      transition: 0.4s;
+      transition: 0.5s;
     }
+    &:active{
+      color: #efefef;
+    }
+}
+
+.fmscratch-content{
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  height: 100vh;
+  min-height: 100vh;
 }
 
 /*-------------------
@@ -44,104 +57,160 @@ a{
 -------------------*/
 
 html,body {
-  height: 100%;
   width: 100%;
-  font-family: 'HiraginoSans-W3', sans-serif;
+  height: 100%;
+  font-family: stratum, "Arial Narrow", "Trebuchet MS", sans-serif;
   font-weight: normal;
   font-size: 14px;
   letter-spacing: 1.2px;
-  color: #1B1B1B;
+  color: #efefef;
 }
 
 /*-------------------
 	ここからheader
 -------------------*/
 
-header.Global-nav{
-  color: #E9E9E9;
+//Loginしていない場合
+
+header.global-nav{
+  display: flex;
+  width: 100%;
+  height: 60px;
   position: absolute;
   top: 0;
-  right: 0;
-  left: 0;
-  z-index: 99;
-    h1.Fm-logo{
-      .logo-img{
+  background: #0a8c86;
+  z-index: 300;
+  .header-line{
+    width: 50%;
+    margin-left: 4%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+    .head-btn{
+      margin: 0 auto;
       display: inline-block;
+      height: 40px;
+    }
+    a.logo-img{
       width: 240px;
-      height: 48px;
-      vertical-align: middle;
-      overflow: hidden;
-      text-indent: 100%;
-      word-wrap: normal;
-      overflow-wrap: normal;
-      white-space: nowrap;
-      background: url('/assets/scratch-font-logo-index.svg');
+      background-image: url('/assets/Fm-logo.svg');
       background-repeat: no-repeat;
+    }
+    a.fm-googlelink{
+      display: flex;
+      align-items: center;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-radius: 5px;
+      &:hover{
+        background: rgba(255,255,255,0.9);
+        color: #ff9600;
+        opacity: 0.9;
+      }
+      span.google-log{
+        font-size: 120%;
+        padding: 4px 10px;
+        display: table-cell;
+        vertical-align: bottom;
       }
     }
-    .header-Line{
-      display: table;
-      margin: 8px auto;
-      min-width: 1120px;
-      width: 100%;
-      position: relative;
-      a.Fm-Headlink{
-        &:hover{
-          padding-bottom: 6px;
-          border-bottom: 3px solid #4E4E4E;
-        }
-        &:visited{
-          color: #4E4E4E;
-        }
-      }
-    }
+  }
 }
 
-/*------------------------
-	header,footer共通部分
-------------------------*/
+//Smartphoneサイズ
 
-nav.Fm-userNav{
-  text-align: right;
-  display: table-cell;
-    ul.Fm-list{
-    	display: inline-block;
-    	li.Fm-menu{
-        font-size: 16px;
-      	display: inline-block;
-    	}
-    }
+@media (max-width: 767px){
+
 }
+
+
+//Loginしている場合
+
+
 
 /*-------------------
 	ここからfooter
 -------------------*/
 
-.footer-nav{
-  position: absolute;
+footer.footer-nav{
   width: 100%;
-  left: -2%;
+  position: absolute;
   bottom: 0;
-  padding: 8px 0;
-  z-index: 99;
-  .footer-Line{
-    position: relative;
-    min-width: 1120px;
-    height: 40px;
-    margin: 20px auto 8px;
-    nav.Fm-userNav{
-      float: right;
-      ul.foot-list{
-        a.Fm-Footlink{
-          &:hover{
-            padding-bottom: 6px;
-            border-bottom: 3px solid #4E4E4E;
+  background: #0a8c86;
+  z-index: 100;
+  .footer-line{
+    padding: 4px 0 8px;
+    margin: 0 auto;
+    width: 70%;
+    max-width: 1440px;
+    nav.fm-commonnav{
+      display: flex;
+      min-width: 400px;
+      padding: 6px 0;
+      justify-content: center;
+      ul.fm-footer-list{
+        height: 24px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li.fm-footer-menu{
+          display: inline-block;
+          text-align: center;
+          font-size: 1.5rem;
+          width: 33.3%;
+          a.fm-footlink{
+            font-weight: 600;
+            letter-spacing: 2px;
+            &:hover{
+              color: #ff9600;
+              opacity: 0.9;
+              transition: 0.6s;
+            }
           }
-          &:visited{
-            color: #4E4E4E;
-          }
+        }
+        li.fm-footer-menu:nth-child(2){
+          border-left: 1px solid #efefef;
+          border-right: 1px solid #efefef;
+        }
+      }
+    }
+    .footer-bottom{
+      display: flex;
+      width: 100%;
+      height: 32px;
+      margin-top: 8px;
+      .footer-logo-span{
+        width: 50%;
+        padding: 4px 0;
+        display: flex;
+        justify-content: center;
+        a.footer-logo{
+          display: flex;
+          align-items: center;
+          width: 160px;
+          background-image: url('/assets/Fm-logo.svg');
+          background-repeat: no-repeat;
+        }
+      }
+      .footer-rights{
+        width: 50%;
+        padding: 4px 0 6px;
+        display: flex;
+        justify-content: center;
+        span.fm-copyright{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 1.1rem;
         }
       }
     }
   }
+}
+
+//Smartphoneサイズ
+
+@media (max-width: 767px){
+
 }
