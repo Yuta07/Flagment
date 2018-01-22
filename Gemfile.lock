@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/rails/webpacker.git
-  revision: dc043282774394d54376c0f8d5e30647d8d9ed90
-  specs:
-    webpacker (3.2.0)
-      activesupport (>= 4.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 4.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -113,6 +104,8 @@ GEM
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -143,7 +136,7 @@ GEM
     mini_magick (4.7.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.10.3)
+    minitest (5.11.1)
     multi_json (1.12.2)
     mysql2 (0.4.10)
     nio4r (2.1.0)
@@ -255,6 +248,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webpacker (3.2.0)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -278,6 +275,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   coffee-script-source (= 1.8.0)
   fog-aws (= 2.0.0)
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen
@@ -298,7 +296,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
-  webpacker!
+  webpacker (~> 3.0)
 
 RUBY VERSION
    ruby 2.4.1p111

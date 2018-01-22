@@ -1,0 +1,38 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+
+/*-------------------
+	ここからerror
+-------------------*/
+
+.alert{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+}
+
+.alert-danger, .alert-error{
+  color: #ff3a3a;
+  background: #efefef;
+  opacity: 0.9;
+}
+
+.alert-success, .alert-info{
+  color: #355c8e;
+  background: #efefef;
+  opacity: 0.9;
+}
+//Smartphoneサイズ
+
+@media (max-width: 767px){
+
+}

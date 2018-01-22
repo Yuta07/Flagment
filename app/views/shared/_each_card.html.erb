@@ -12,7 +12,7 @@
     </p>
     <% end %>
     <% if current_user?(@project.user) %>
-      <%= link_to "delete", card_path(@project, card), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "delete", card_path(card), method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   </li>
 <% end %>
