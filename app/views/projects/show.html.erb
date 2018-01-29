@@ -1,18 +1,37 @@
 <% if logged_in? %>
-  <h1>Projects#show</h1>
-  <section class="card-show">
+  <section class="card-show" style="padding:100px 0">
     <h2><%= @project.name %></h2>
-    <p class="pro-image"><%= image_tag @project.picture.url, :size => "200x200" if @project.picture? %></p>
-    <h2>Created Card</h2>
+    <% if @project.picture? %>
+      <p class="pro-image"><%= image_tag @project.picture.url, :size => "200x200" %></p>
+    <% else %>
+      <p class="pro-image"><%= image_tag 'default.png', :size => "200x200" %></p>
+    <% end %>
+    <% unless @project.categories.blank? %>
+      <ul><% @project.categories.each do |category| %>
+          <li><%= category.name %></li>
+      <% end %></ul>
+    <% end %>
+    <p><%= @project.description %></p>
+    <h2 id="proedit-open">Edit</h2>
+    <% provide(:project_add, 'Update') %>
+    <%= render partial: 'shared/project_form', locals: { project: @project } %>
+    <% if current_user?(@project.user) %>
+      <h2><%= link_to "Delete", @project, method: :delete, data: { confirm: "Are you sure?" } %></h2>
+    <% end %>
+    <h1>Created Card</h1>
     <ul class="project-contain">
-      <%= render partial: 'shared/each_card', locals: { cards: @cards } %>
+      <%= render partial: 'shared/each_card', locals: { cards: @project.cards } %>
     </ul>
-  </section>
-  <div class="card-row">
-    <section class="card_form">
+    <h2 id="cardadd-open">
+      Add Card
+    </h2>
+    <div id="cardadd-modal" class="hidden">
+      <% provide(:card_add, 'Create') %>
       <%= render partial: 'shared/card_form', locals: { card: @project.cards.build, project: @project } %>
-    </section>
-  </div>
+    </div>
+  </section>
+  <div id="conceal" class="hidden"></div>
+  <%= javascript_include_tag 'cardadd-modal', 'data-turbolinks-track': 'reload' %>
 <% else %>
 <h3>ログインしてください</h3>
 <%= render 'shared/login_form' %>

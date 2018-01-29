@@ -38,7 +38,6 @@ class UsersController < ApplicationController
     file = params[:user][:user_image]
     @user.set_image(file)
     if @user.update_attributes(user_params)
-      binding.pry
       flash[:success]="Update your account"
       redirect_to @user
     else

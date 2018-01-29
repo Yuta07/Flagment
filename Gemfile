@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'gon'
 gem "font-awesome-rails"
 gem 'carrierwave',             '1.1.0'
 gem 'mini_magick',             '4.7.0'

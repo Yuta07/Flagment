@@ -1,0 +1,45 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+
+//Modal-Window_Proadd
+
+#mantle, #conceal {
+  background: rgba(240, 240, 240, 0.65);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#proadd-modal, #cardadd-modal {
+  background: #ffffff;
+  color: #000000;
+  width: 480px;
+  padding: 30px;
+  border-radius: 4px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
+  z-index: 1001;
+  transform: translateX(-50%) translateY(-60%);
+}
+
+#mantle.hidden, #conceal.hidden, #cover.hidden {
+  display: none;
+}
+
+#proadd-modal.hidden, #cardadd-modal.hidden {
+  display: none;
+}
+
+#proadd-open, #proedit-open, #cardadd-open {
+  cursor: pointer;
+}

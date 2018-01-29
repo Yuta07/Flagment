@@ -1,12 +1,29 @@
-<div>
+<div id="proadd-modal" class="hidden">
   <%= form_for(project) do |f| %>
     <%= render 'shared/errors', object: f.object %>
       <!-- name -->
-      <%= f.label :title %>
-      <%= f.text_field :name %>
+      <p class="pro-description">
+        <%= f.label :title %>
+        <%= f.text_field :name %>
+      </p>
+      <!-- description -->
+      <p class="pro-description">
+        <%= f.label :description %>
+        <%= f.text_area :description, size: "70x5" %>
+      </p>
+      <!-- image -->
       <p class="pro-picture">
       <%= f.file_field :picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'  %>
       </p>
-      <%= f.submit "Create", class: "btn btn-primary" %>
+      <!-- tag -->
+      <div class="project-tags-field">
+        <p>タグは20文字までです。</p>
+        <%= f.label "カテゴリー" %>
+        <ul id="myTags" style="width:50%">
+        </ul>
+        <%= hidden_field_tag :category_hidden, @category_list %>
+      </div>
+      <%= f.submit yield(:project_add), class: "submit-btn", data:{disable_with:'Create'} %>
   <% end %>
 </div>
+<%= javascript_include_tag 'projects' %>
