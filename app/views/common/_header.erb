@@ -5,15 +5,24 @@
   <% if logged_in? %>
     <div class="header-line">
       <nav class="fm-userNav">
-        <ul class="fm-header-list">
-          <li class="fm-menu"><%= link_to @current_user.name, current_user, class: "fm-userlink" %></li>
-          <li class="fm-menu"><%= link_to 'Settings', root_path, class: "fm-userlink" %></li>
-          <li class="fm-menu"><%= link_to 'Notice', root_path, class: "fm-userlink" %></li>
-          <li class="fm-menu"><%= link_to 'Log out', logout_path, method: :delete, class: "fm-userlink" %></li>
-        </ul>
+        <div class="accbox">
+          <% if @current_user.user_image? %>
+            <span class="pro-image"><%= image_for(@current_user, :size => "36x36") %></span>
+          <% else %>
+            <span class="pro-image"><%= image_tag 'default_user.png', :size => "36x36" %></span>
+          <% end %>
+          <label for="label1" class="accuser"><%= @current_user.name %></label>
+          <input type="checkbox" id="label1" class="cssacc" />
+          <div class="accshow">
+            <ul class="fm-header-list accordion-menu">
+              <li class="fm-menu"><%= link_to 'Settings', user_path(@current_user), class: "fm-userlink" %></li>
+              <li class="fm-menu"><%= link_to 'Notice', root_path, class: "fm-userlink" %></li>
+              <li class="fm-menu"><%= link_to 'Log out', logout_path, method: :delete, class: "fm-userlink" %></li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
-    <div id="cover"></div>
   <% else %>
     <div class="header-line">
       <%= link_to root_path, class: "fm-googlelink head-btn" do %>

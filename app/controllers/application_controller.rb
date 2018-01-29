@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   #before_action
 
+  #タグauto
+  def set_available_tags_to_gon
+    gon.available_tags = Category.pluck(:name)
+  end
+
   #ログインしているか
   def logged_in_user
     unless logged_in?

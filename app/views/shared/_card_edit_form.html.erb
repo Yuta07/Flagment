@@ -1,0 +1,10 @@
+<%= form_for(card, url: card_path) do |f| %>
+  <%= render 'shared/errors', object: f.object %>
+  <!-- subject -->
+  <%= f.label :subject %>
+  <%= f.text_field :subject %>
+  <p class="card-picture">
+    <%= f.file_field :card_picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'  %>
+  </p>
+  <%= f.submit yield(:card_add), class: "btn btn-primary", data:{disable_with:'Update'} %>
+<% end %>

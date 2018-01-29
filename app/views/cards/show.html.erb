@@ -1,9 +1,19 @@
-<h1>Projects#show</h1>
 <% if logged_in? %>
-<div class="card-show">
-  <h3><%= current_user.name %></h3>
-</div>
+  <div class="card-show" style="padding:100px 0">
+    <h2><%= @current_user.name %></h2>
+    <h2><%= @card.subject %></h2>
+    <% if @card.card_picture? %>
+      <p class="pro-image"><%= image_tag @card.card_picture.url, :size => "200x200" %></p>
+    <% else %>
+      <p class="pro-image"><%= image_tag 'default.png', :size => "200x200" %></p>
+    <% end %>
+    <h2><%= link_to "Edit", edit_card_path(@card) %></h2>
+    <% if current_user?(@card.user) %>
+      <h2><%= link_to "Delete", @card, method: :delete, data: { confirm: "Are you sure?" } %></h2>
+    <% end %>
+  </div>
+  <div id="cover" class="hidden"></div>
 <% else %>
-<h3>ログインしてください</h3>
-<%= render 'shared/login_form' %>
+  <h3>ログインしてください</h3>
+  <%= render 'shared/login_form' %>
 <% end %>
