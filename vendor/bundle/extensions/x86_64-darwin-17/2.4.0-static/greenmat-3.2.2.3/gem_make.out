@@ -1,0 +1,37 @@
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/greenmat-3.2.2.3/ext/greenmat
+/Users/yuta/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20180130-9266-1a2mp1c.rb extconf.rb
+creating Makefile
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/greenmat-3.2.2.3/ext/greenmat
+make "DESTDIR=" clean
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/greenmat-3.2.2.3/ext/greenmat
+make "DESTDIR="
+compiling autolink.c
+compiling buffer.c
+compiling gm_markdown.c
+compiling gm_render.c
+compiling houdini_href_e.c
+compiling houdini_html_e.c
+compiling html.c
+html.c:290:57: warning: passing 'const struct buf *' to parameter of type 'struct buf *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                bufprintf(ob, "<h%d id=\"%s\">", level, header_anchor(text));
+                                                                      ^~~~
+html.c:268:33: note: passing argument to parameter 'text' here
+char *header_anchor(struct buf *text)
+                                ^
+html.c:638:51: warning: passing 'const struct buf *' to parameter of type 'struct buf *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                bufprintf(ob, "<a href=\"#%s\">", header_anchor(text));
+                                                                ^~~~
+html.c:268:33: note: passing argument to parameter 'text' here
+char *header_anchor(struct buf *text)
+                                ^
+2 warnings generated.
+compiling html_smartypants.c
+compiling markdown.c
+compiling stack.c
+linking shared-object greenmat.bundle
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/greenmat-3.2.2.3/ext/greenmat
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 greenmat.bundle ./.gem.20180130-9266-x1mwp8

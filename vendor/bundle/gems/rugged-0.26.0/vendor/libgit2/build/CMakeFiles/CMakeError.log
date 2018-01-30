@@ -1,0 +1,95 @@
+Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_MTIM failed with the following output:
+Change Dir: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_440d2/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_440d2.dir/build.make CMakeFiles/cmTC_440d2.dir/build
+Building C object CMakeFiles/cmTC_440d2.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -fPIC -DHAVE_STRUCT_STAT_ST_MTIM   -o CMakeFiles/cmTC_440d2.dir/src.c.o   -c /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp/src.c
+/Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp/src.c:7:37: error: no member named 'st_mtim' in 'struct stat'
+   (void)sizeof(((struct stat *)0)->st_mtim);
+                ~~~~~~~~~~~~~~~~~~  ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_440d2.dir/src.c.o] Error 1
+make: *** [cmTC_440d2/fast] Error 2
+
+Source file was:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int main()
+{
+   (void)sizeof(((struct stat *)0)->st_mtim);
+   return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STAT_MTIME_NSEC failed with the following output:
+Change Dir: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_00f41/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_00f41.dir/build.make CMakeFiles/cmTC_00f41.dir/build
+Building C object CMakeFiles/cmTC_00f41.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -fPIC -DHAVE_STRUCT_STAT_MTIME_NSEC   -o CMakeFiles/cmTC_00f41.dir/src.c.o   -c /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp/src.c
+/Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp/src.c:6:37: error: no member named 'st_mtime_nsec' in 'struct stat'; did you mean 'st_mtimespec'?
+   (void)sizeof(((struct stat *)0)->st_mtime_nsec);
+                                    ^~~~~~~~~~~~~
+                                    st_mtimespec
+/usr/include/sys/stat.h:182:13: note: 'st_mtimespec' declared here
+struct stat __DARWIN_STRUCT_STAT64;
+            ^
+/usr/include/sys/stat.h:166:2: note: expanded from macro '__DARWIN_STRUCT_STAT64'
+        __DARWIN_STRUCT_STAT64_TIMES \
+        ^
+/usr/include/sys/stat.h:130:18: note: expanded from macro '__DARWIN_STRUCT_STAT64_TIMES'
+        struct timespec st_mtimespec;           /* time of last data modification */ \
+                        ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_00f41.dir/src.c.o] Error 1
+make: *** [cmTC_00f41/fast] Error 2
+
+Source file was:
+
+#include <sys/stat.h>
+
+int main()
+{
+   (void)sizeof(((struct stat *)0)->st_mtime_nsec);
+   return 0;
+}
+
+Determining if the function qsort_s exists failed with the following output:
+Change Dir: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_07566/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_07566.dir/build.make CMakeFiles/cmTC_07566.dir/build
+Building C object CMakeFiles/cmTC_07566.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -D_GNU_SOURCE -fPIC -Wall -Wextra -Wdocumentation -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes -Wdeclaration-after-statement -Wno-unused-const-variable -Wno-unused-function -Wno-deprecated-declarations -DCHECK_FUNCTION_EXISTS=qsort_s   -o CMakeFiles/cmTC_07566.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.10.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_07566
+/usr/local/Cellar/cmake/3.10.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07566.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GNU_SOURCE -fPIC -Wall -Wextra -Wdocumentation -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes -Wdeclaration-after-statement -Wno-unused-const-variable -Wno-unused-function -Wno-deprecated-declarations -DCHECK_FUNCTION_EXISTS=qsort_s -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_07566.dir/CheckFunctionExists.c.o  -o cmTC_07566 
+Undefined symbols for architecture x86_64:
+  "_qsort_s", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_07566] Error 1
+make: *** [cmTC_07566/fast] Error 2
+
+
+Determining if the function clock_gettime exists in the rt failed with the following output:
+Change Dir: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_40b88/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_40b88.dir/build.make CMakeFiles/cmTC_40b88.dir/build
+Building C object CMakeFiles/cmTC_40b88.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -D_GNU_SOURCE -fPIC -Wall -Wextra -Wdocumentation -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes -Wdeclaration-after-statement -Wno-unused-const-variable -Wno-unused-function -Wno-deprecated-declarations -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTC_40b88.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.10.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_40b88
+/usr/local/Cellar/cmake/3.10.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40b88.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -D_GNU_SOURCE -fPIC -Wall -Wextra -Wdocumentation -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes -Wdeclaration-after-statement -Wno-unused-const-variable -Wno-unused-function -Wno-deprecated-declarations -DCHECK_FUNCTION_EXISTS=clock_gettime -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_40b88.dir/CheckFunctionExists.c.o  -o cmTC_40b88  -L/Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp/time.h -Wl,-rpath,/Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp/time.h -lrt 
+ld: warning: directory not found for option '-L/Users/yuta/railsworks/FmScratch/vendor/bundle/gems/rugged-0.26.0/vendor/libgit2/build/CMakeFiles/CMakeTmp/time.h'
+ld: library not found for -lrt
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_40b88] Error 1
+make: *** [cmTC_40b88/fast] Error 2
+
+

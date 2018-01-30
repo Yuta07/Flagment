@@ -38,6 +38,9 @@ gem 'carrierwave',             '1.1.0'
 gem 'mini_magick',             '4.7.0'
 gem 'fog-aws',                 '2.0.0'
 gem 'webpacker', '~> 3.0'
+gem 'qiita-markdown'
+gem 'github-linguist'
+gem 'gemoji'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

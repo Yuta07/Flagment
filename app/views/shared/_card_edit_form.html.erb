@@ -6,5 +6,7 @@
   <p class="card-picture">
     <%= f.file_field :card_picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'  %>
   </p>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
   <%= f.submit yield(:card_add), class: "btn btn-primary", data:{disable_with:'Update'} %>
 <% end %>
