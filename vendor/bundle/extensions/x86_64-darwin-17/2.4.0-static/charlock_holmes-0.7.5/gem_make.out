@@ -1,0 +1,31 @@
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/charlock_holmes-0.7.5/ext/charlock_holmes
+/Users/yuta/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20180130-6158-10s60rv.rb extconf.rb
+checking for -licui18n... no
+checking for -licui18n... yes
+checking for unicode/ucnv.h... yes
+checking for -lz... yes
+checking for -licuuc... yes
+checking for -licudata... yes
+creating Makefile
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/charlock_holmes-0.7.5/ext/charlock_holmes
+make "DESTDIR=" clean
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/charlock_holmes-0.7.5/ext/charlock_holmes
+make "DESTDIR="
+compiling converter.c
+compiling encoding_detector.c
+compiling ext.c
+compiling transliterator.cpp
+transliterator.cpp:101:60: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  trans = Transliterator::createInstance(UnicodeString(id, id_len), UTRANS_FORWARD, p_error, status);
+                                         ~~~~~~~~~~~~~     ^~~~~~
+transliterator.cpp:106:34: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  u_txt = new UnicodeString(txt, txt_len);
+              ~~~~~~~~~~~~~      ^~~~~~~
+2 warnings generated.
+linking shared-object charlock_holmes/charlock_holmes.bundle
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/charlock_holmes-0.7.5/ext/charlock_holmes
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 charlock_holmes.bundle ./.gem.20180130-6158-1d645bh/charlock_holmes

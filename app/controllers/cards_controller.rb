@@ -61,7 +61,7 @@ class CardsController < ApplicationController
   #privateメソッド
 
   def card_params
-    params.require(:card).permit(:subject, :card_picture)
+    params.require(:card).permit(:subject, :card_picture, :content)
   end
 
   def correct_user

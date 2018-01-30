@@ -1,0 +1,24 @@
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/escape_utils-1.1.1/ext/escape_utils
+/Users/yuta/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20180130-6158-1olxg0o.rb extconf.rb
+creating Makefile
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/escape_utils-1.1.1/ext/escape_utils
+make "DESTDIR=" clean
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/escape_utils-1.1.1/ext/escape_utils
+make "DESTDIR="
+compiling buffer.c
+compiling escape_utils.c
+compiling houdini_href_e.c
+compiling houdini_html_e.c
+compiling houdini_html_u.c
+compiling houdini_js_e.c
+compiling houdini_js_u.c
+compiling houdini_uri_e.c
+compiling houdini_uri_u.c
+compiling houdini_xml_e.c
+linking shared-object escape_utils/escape_utils.bundle
+
+current directory: /Users/yuta/railsworks/FmScratch/vendor/bundle/gems/escape_utils-1.1.1/ext/escape_utils
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 escape_utils.bundle ./.gem.20180130-6158-zw0gr4/escape_utils
