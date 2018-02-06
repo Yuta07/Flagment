@@ -16,10 +16,21 @@
     <div class="fmscratch-content">
       <%= render partial: 'common/header' %>
       <% flash.each do |message_type,message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <div class="alert alert-<%= message_type %>" id="alert-box"><%= message %>
+        </div>
+        <!-- <div class="cancel-box" id="fa-cancel">
+          <i class="fa fa-times cancel" aria-hidden="true"></i>
+        </div> -->
       <% end %>
       <%= yield %>
       <%= render partial: 'common/footer' %>
     </div>
+    <script>
+      setTimeout(function(){
+        $('#alert-box').fadeOut();
+      }, 3000);
+      console.log("ddd");
+    </script>
+    <%= javascript_include_tag "preview", 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

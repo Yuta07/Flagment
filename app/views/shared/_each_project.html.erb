@@ -1,20 +1,22 @@
 <% projects.each do |pro| %>
-  <li id="project-<%= pro.id %>" class="pro-list" style="display:inline-block">
+  <div id="project-<%= pro.id %>" class="pro-list">
     <%= link_to project_path(pro.id) do %>
-    <p class="pro-name"><%= pro.name %></p>
+    <p class="pro-name"><%= pro.name.truncate(16) %></p>
+    <div class="pic-box">
       <% if pro.picture? %>
-        <p class="pro-image"><%= image_tag pro.picture.url, :size => "200x200" %></p>
+        <p class="pro-image"><%= image_tag pro.picture.url, :size => "130x130" %></p>
       <% else %>
-        <p class="pro-image"><%= image_tag 'default.png', :size => "200x200" %></p>
+        <p class="pro-image"><%= image_tag 'default.png', :size => "130x130" %></p>
       <% end %>
+    </div>
     <% end %>
     <% unless pro.categories.blank? %>
-      <ul><% pro.categories.each do |category| %>
-          <li><%= category.name %></li>
+      <ul class="cate-list"><% pro.categories.each do |category| %>
+          <li class="cate-eachlist"><%= category.name %></li>
       <% end %></ul>
     <% end %>
     <p class="pro-time">
-      Posted <%= time_ago_in_words(pro.created_at) %> ago.
+      Updated <%= time_ago_in_words(pro.updated_at) %> ago
     </p>
-  </li>
+  </div>
 <% end %>

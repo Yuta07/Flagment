@@ -1,36 +1,54 @@
 <% if logged_in? %>
-  <section class="card-show" style="padding:100px 0">
-    <h2><%= @project.name %></h2>
-    <% if @project.picture? %>
-      <p class="pro-image"><%= image_tag @project.picture.url, :size => "200x200" %></p>
-    <% else %>
-      <p class="pro-image"><%= image_tag 'default.png', :size => "200x200" %></p>
-    <% end %>
-    <% unless @project.categories.blank? %>
-      <ul><% @project.categories.each do |category| %>
-          <li><%= category.name %></li>
-      <% end %></ul>
-    <% end %>
-    <p><%= @project.description %></p>
-    <h2 id="proedit-open">Edit</h2>
-    <% provide(:project_add, 'Update') %>
-    <%= render partial: 'shared/project_form', locals: { project: @project } %>
-    <% if current_user?(@project.user) %>
-      <h2><%= link_to "Delete", @project, method: :delete, data: { confirm: "Are you sure?" } %></h2>
-    <% end %>
-    <h1>Created Card</h1>
-    <ul class="project-contain">
-      <%= render partial: 'shared/each_card', locals: { cards: @project.cards } %>
-    </ul>
-    <h2 id="cardadd-open">
-      Add Card
-    </h2>
+<div class="note-container">
+  <div class="note">
+    <h2 class="show-pro"><%= @project.name %></h2>
+    <div class="pro-detail">
+      <% if @project.picture? %>
+        <%= image_tag @project.picture.url, :size => "140x140" %>
+      <% else %>
+        <%= image_tag 'default.png', :size => "140x140" %>
+      <% end %>
+      <div class="right-flex">
+        <% unless @project.categories.blank? %>
+          <ul class="cate-list"><% @project.categories.each do |category| %>
+              <li class="cate-eachlist"><%= category.name %></li>
+          <% end %></ul>
+        <% end %>
+        <p class="pro-description"><%= @project.description %></p>
+        <span id="proedit-open" class="pro-link">Edit</span>
+        <% provide(:project_add, 'Update') %>
+        <%= render partial: 'shared/project_form', class:"pro-link", locals: { project: @project } %>
+        <% if current_user?(@project.user) %>
+          <%= link_to "Delete", @project, class:"pro-link", method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+        <%= link_to "Back", root_path, class:"pro-link" %>
+      </div>
+    </div>
+    <!--  Project-title_search機能  -->
+    <div class="scratch-search scratch-card">
+      <div class="search-form card-search">
+        <h3 class="card-search">カードの内容で検索しましょう。</h3>
+        <%= form_tag project_path(@project), :method => 'get' do %>
+          <%= text_field_tag :search, params[:search], class: "search-box" %>
+          <%= submit_tag 'Search', :content => nil, class: "submit-box" %>
+        <% end %>
+      </div>
+    </div>
+    <h2 class="card-count">Card Count(<%= @cards.count %>)</h2>
+    <div class="pro-box card-box">
+      <h2 id="cardadd-open">
+        <span class="add-text">Add Card</span>
+        <div class="add-icon"></div>
+      </h2>
+      <%= render partial: 'shared/each_card', locals: { cards: @cards } %>
+    </div>
     <div id="cardadd-modal" class="hidden">
       <% provide(:card_add, 'Create') %>
       <%= render partial: 'shared/card_form', locals: { card: @project.cards.build, project: @project } %>
     </div>
-  </section>
+  </div>
   <div id="conceal" class="hidden"></div>
+</div>
   <%= javascript_include_tag 'cardadd-modal', 'data-turbolinks-track': 'reload' %>
 <% else %>
 <h3>ログインしてください</h3>

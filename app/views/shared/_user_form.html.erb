@@ -1,11 +1,12 @@
 <div id="sign-modal" class="hidden">
   <%= form_for(@user, multipart: true) do |f| %>
     <div class="form-style">
-      <h1 class="form-title">Sign up</h1>
-      <%= render 'shared/errors', object: f.object %>
       <% if logged_in?%>
-        <%= image_for(@current_user, :size => "80x80") %>
+        <h1 class="form-title">User edit</h1>
+      <% else %>
+        <h1 class="form-title">Sign up</h1>
       <% end %>
+      <%= render 'shared/errors', object: f.object %>
       <!-- name -->
       <%= f.text_field :name, placeholder: "お名前", class: "form-field" %>
       <!-- email -->

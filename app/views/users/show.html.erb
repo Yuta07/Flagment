@@ -1,7 +1,7 @@
 <% if logged_in? %>
-<p><%= @current_user.name %></p>
+<p><%= @user.name %></p>
 <!-- application helperからメソッド呼び出し -->
-<%= image_for(@current_user, :size => "120x120") %>
+<%= image_for(@user, :size => "120x120") %>
 <%= link_to 'Edit', edit_user_path(current_user) %>
 <div class="pro-show">
   <% if @user.projects.any? %>

@@ -18,19 +18,24 @@
   position: absolute;
   top: 0;
   z-index: 1000;
+  transition: all 700ms 0s line;
+  transition-timing-function: ease-in;
+  opacity: 0.92;
+  visibility: visible;
 }
 
 .alert-danger, .alert-error{
-  color: #ff3a3a;
-  background: #efefef;
-  opacity: 0.9;
+  color: #efefef;
+  background: #f94949;
+  opacity: 0.93;
 }
 
 .alert-success, .alert-info{
-  color: #355c8e;
-  background: #efefef;
+  color: #efefef;
+  background: #3588b3;
   opacity: 0.9;
 }
+
 //Smartphoneサイズ
 
 @media (max-width: 767px){

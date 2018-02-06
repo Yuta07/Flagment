@@ -1,15 +1,17 @@
 <% cards.each do |card| %>
-  <li id="card-<%= card.id %>" class="card-list" style="display:inline-block">
+  <div id="card-<%= card.id %>" class="card-list">
     <%= link_to card_path(card.id) do %>
     <p class="card-subject"><%= card.subject %></p>
+    <div class="pic-box">
       <% if card.card_picture? %>
-        <p class="card-image"><%= image_tag card.card_picture.url, :size => "120x120" %></p>
+        <p class="card-image"><%= image_tag card.card_picture.url, :size => "130x130" %></p>
       <% else %>
-        <p class="card-image"><%= image_tag 'default.png', :size => "120x120" %></p>
+        <p class="card-image"><%= image_tag 'default.png', :size => "130x130" %></p>
       <% end %>
+    </div>
     <p class="card-time">
-      Posted <%= time_ago_in_words(card.created_at) %> ago.
+      Updated <%= time_ago_in_words(card.updated_at) %> ago
     </p>
     <% end %>
-  </li>
+  </div>
 <% end %>

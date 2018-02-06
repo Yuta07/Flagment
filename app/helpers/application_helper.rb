@@ -1,5 +1,5 @@
 module ApplicationHelper
-  
+
   def qiita_markdown(markdown)
     processor = Qiita::Markdown::Processor.new(hostname: "example.com")
     processor.call(markdown)[:output].to_s.html_safe
@@ -9,7 +9,7 @@ module ApplicationHelper
     if user.user_image
       image_tag("/user_images/#{user.user_image}",size)
     else
-      image_tag("user_default.png",size)
+      image_tag("default_user.png",size)
     end
   end
 end

@@ -1,3 +1,61 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.scratch-card{
+  border-top: 2px #009999 solid;
+  .card-search{
+    text-align: center;
+    h3.card-search{
+      margin-top: 14px;
+      padding: 20px 0 12px;
+    }
+  }
+}
+
+h2.show-pro{
+  font-size: 2em;
+  padding: 10px 10px;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 1.1px;
+}
+.pro-detail{
+  display: flex;
+  margin: 18px 0 40px;
+  .right-flex{
+    padding: 0 5px 10px 20px;
+    margin-left: 40px;
+    ul.cate-list{
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 2px 4px 2px 0;
+      margin: 5px 0 10px;
+      line-height: 1.7;
+      li.cate-eachlist{
+        padding-right: 4px;
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+    }
+    p.pro-description{
+      font-size: 1.05em;
+      font-weight: 540;
+      margin-bottom: 14px;
+      color: #585353;
+    }
+    .pro-link{
+      color: #928a8a;
+      padding: 0 5px;
+      font-weight: 560;
+      font-size: 1.3em;
+      &:hover{
+        color: #ff9600;
+        transition: 0.4s;
+      }
+    }
+  }
+}

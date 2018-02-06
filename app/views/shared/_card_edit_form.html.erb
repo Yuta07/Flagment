@@ -4,7 +4,8 @@
   <%= f.label :subject %>
   <%= f.text_field :subject %>
   <p class="card-picture">
-    <%= f.file_field :card_picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'  %>
+    <%= f.file_field :card_picture, accept: 'image/jpeg,image/jpg,image/gif,image/png',id: "file" %>
+    <div id="preview"></div>
   </p>
   <%= f.label :content %>
   <%= f.text_area :content %>

@@ -2,25 +2,26 @@
   <%= form_for(project) do |f| %>
     <%= render 'shared/errors', object: f.object %>
       <!-- name -->
-      <p class="pro-description">
-        <%= f.label :title %>
-        <%= f.text_field :name %>
+      <p class="pro-input">
+        <%= f.label :title, class: "label" %>
+        <%= f.text_field :name, class: "field" %>
       </p>
       <!-- description -->
-      <p class="pro-description">
-        <%= f.label :description %>
-        <%= f.text_area :description, size: "70x5" %>
+      <p class="pro-input">
+        <%= f.label :description, class: "label" %>
+        <%= f.text_area :description, class: "field", size: "55x7" %>
       </p>
       <!-- image -->
       <p class="pro-picture">
-      <%= f.file_field :picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'  %>
+        プロジェクト画像
+      <%= f.file_field :picture, accept: 'image/jpeg,image/jpg,image/gif,image/png',id: "file" %>
+      <div id="preview"></div>
       </p>
       <!-- tag -->
       <div class="project-tags-field">
-        <p>タグは20文字までです。</p>
+        <p>※タグは20文字までです。</p>
         <%= f.label "カテゴリー" %>
-        <ul id="myTags" style="width:50%">
-        </ul>
+        <ul id="myTags"></ul>
         <%= hidden_field_tag :category_hidden, @category_list %>
       </div>
       <%= f.submit yield(:project_add), class: "submit-btn", data:{disable_with:'Create'} %>
