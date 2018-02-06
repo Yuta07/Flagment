@@ -1,0 +1,87 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+
+/*
+ここからProject
+*/
+
+.card-list{
+  padding: 10px 0 30px;
+}
+.pro-list{
+  padding: 10px 0 15px;
+}
+.pro-list, .card-list{
+  margin: 10px 15px 10px 8px;
+  border: 2px solid #949292;
+  box-shadow:2px 2px 4px 2px #949292;
+  border-radius:6px;
+  position: relative;
+  &:hover{
+    opacity: 0.8;
+    transition: 0.4s;
+    box-shadow: 0px 0px 6px 0px;
+    color: #ff9600;
+  }
+  .pro-image{
+    width: 130px;
+  }
+  p.pro-name, p.card-subject{
+    padding: 10px 10px;
+    height: 49px;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.1em;
+    letter-spacing: 1.1px;
+    font-weight: 550;
+    color: #949292;
+  }
+  .pic-box{
+    padding: 10px;
+    margin-bottom: 12px;
+    background-color: #ffffff;
+  }
+  ul.cate-list{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 2px 4px;
+    margin: 5px 0 20px;
+    width: 150px;
+    line-height: 1.7;
+    li.cate-eachlist{
+      padding-left: 4px;
+      font-weight: 600;
+    }
+  }
+  p.pro-time, p.card-time{
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #000000;
+  }
+}
+
+/*
+ここからProject
+*/
+
+
+
+/*
+ * 空の子パネル
+ */
+.cell.is-empty {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}

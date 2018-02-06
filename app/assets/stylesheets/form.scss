@@ -1,0 +1,31 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+
+.caform{
+  width: 80%;
+  margin: 0 auto;
+  .field{
+    width: 70%;
+  }
+}
+
+.pro-input{
+  margin: 2px 0;
+  .label{
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  .field{
+    font-size: 1.1em;
+    line-height: 1.4;
+    padding: 3px 5px;
+  }
+}
+.submit-btn{
+  font-size: 1.4em;
+  margin-top: 12px;
+  width: 100px;
+}

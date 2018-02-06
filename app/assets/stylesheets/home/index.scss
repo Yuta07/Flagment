@@ -7,6 +7,7 @@
 /*----------------------------------
 	ここからindex Loginしていない場合
 ----------------------------------*/
+
 .fm-index{
   width: 100%;
   height: 98vh;
@@ -66,3 +67,93 @@
 /*----------------------------------
 	ここからindex Loginしている場合
 ----------------------------------*/
+.note-container{
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  .note{
+    padding:120px 1% 5%;
+    width: 75%;
+    margin: 0 auto;
+    padding-left: 1%;
+    .scratch-search{
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      margin-bottom: 60px;
+      .search-form{
+        width: 50%;
+        h2{
+          font-size: 2em;
+          padding-bottom: 14px;
+        }
+        .search-box{
+          width: 52%;
+          height: 30px;
+          padding: 6px;
+          font-size: 1em;
+          border:solid 1px #c5c5c5;
+          border-radius: 4px;
+          input:focus {
+              border:solid 1px #EEA34A;
+          }
+        }
+        .submit-box{
+          width: 15%;
+          font-size: 1.2em
+        }
+      }
+      .cate-form{
+        width: 48%;
+        padding: 0 1%;
+        margin-top: 1%;
+        line-height: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.15em;
+        justify-content: start;
+        a.cate-link{
+          color: #949292;
+          padding: 0 5px;
+          font-weight: 550;
+          &:hover{
+            color: #ff9600;
+            transition: 0.4s;
+          }
+        }
+      }
+    }
+    .pro-count, .card-count{
+      font-size: 2em;
+      margin-bottom: 24px;
+    }
+    .pro-box, .card-box{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-left: 1%;
+      .add-text{
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0 28px;
+        text-align: center;
+        font-size: 1.2em;
+      }
+      .add-icon{
+        text-align: center;
+        transform: rotate(0deg);
+        transition: transform 0.2s linear;
+        width: 140px;
+        &:hover{
+          transform: rotate(90deg);
+          transition: transform 0.2s linear;
+        }
+      }
+      .add-icon:before {
+        font-family: FontAwesome;
+        content: '\f055';
+        filter: invert(80%);
+        font-size: 6em;
+      }
+    }
+  }
+}

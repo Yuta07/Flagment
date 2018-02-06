@@ -16,4 +16,12 @@ class Card < ApplicationRecord
       errors.add(:picture, "should be less than 4MB")
     end
   end
+
+  def self.search(search)
+    if search
+      where(['content LIKE ?', "%#{search}%"])
+    else
+      all
+    end
+  end
 end

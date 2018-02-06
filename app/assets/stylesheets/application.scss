@@ -68,6 +68,17 @@ html,body {
   min-height: 100vh;
 }
 
+//image-preview
+#preview img{
+  width: 140px;
+  height: 140px;
+}
+
+#capreview img{
+  width: 140px;
+  height: 140px;
+}
+
 /*-------------------
 	ここからheader
 -------------------*/
@@ -85,7 +96,7 @@ header.global-nav{
   z-index: 300;
   .header-line{
     width: 50%;
-    margin-left: 4%;
+    justify-content: center;
     text-align: center;
     display: flex;
     align-items: center;
@@ -129,7 +140,27 @@ header.global-nav{
 
 //Loginしている場合
 
+.headuser-img{
+  padding: 4px;
+  border-radius: 50%;
+}
+.accshow{
+  background-color: #0a8c86;
+  ul.fm-header-list{
+    li.fm-menu{
+      padding: 6px;
+      a.fm-userlink{
+        &:hover{
+          color: #ff9600;
+          opacity: 0.9;
+          transition: 0.6s;
+        }
+      }
+    }
+  }
+}
 
+//ドロップダウンscss => header-drop.scss
 
 /*-------------------
 	ここからfooter
@@ -143,12 +174,11 @@ footer.footer-nav{
   background: #0a8c86;
   z-index: 100;
   .footer-line{
-    padding: 4px 0 8px;
+    padding: 4px 0 6px;
     margin: 0 auto;
     width: 70%;
     max-width: 1440px;
     nav.fm-commonnav{
-      display: flex;
       min-width: 400px;
       padding: 6px 0;
       justify-content: center;

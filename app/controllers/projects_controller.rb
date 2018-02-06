@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
     if logged_in?
       @project = current_user.projects.find(params[:id])
       @category_list = @project.categories.pluck(:name).join(",")
+      @cards = @project.cards.search(params[:search])
     end
   end
 
@@ -25,7 +26,7 @@ class ProjectsController < ApplicationController
       redirect_to root_url
     else
       if project.save
-        project.save_categories(category_list)if !params[:category_list].nil?
+        project.save_categories(category_list) if !params[:category_list].nil?
         flash[:success] = "Project cration successfully"
         redirect_to project_url(project)
       else

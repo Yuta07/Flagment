@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   has_many :cards, dependent: :destroy
   has_many :project_categories, dependent: :destroy
   has_many :categories, through: :project_categories
-  #新規作成順にする
+  #新規更新順にする
   default_scope -> { order(updated_at: :desc) }
   mount_uploader :picture, PictureUploader
 
@@ -32,6 +32,14 @@ class Project < ApplicationRecord
     new_tags.each do |new_name|
       project_category = Category.find_or_create_by(name:new_name)
       self.categories << project_category
+    end
+  end
+
+  def self.search(search)
+    if search
+      where(['name LIKE ?', "%#{search}%"])
+    else
+      all
     end
   end
 

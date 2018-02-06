@@ -65,6 +65,7 @@ group :development do
   gem 'sprockets'
   gem 'therubyracer'
   gem 'autoprefixer-rails'
+  gem 'rails-erd', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -86,6 +87,3 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
-
-# n + 1チェック
-gem 'bullet', group: 'development'
