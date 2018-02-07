@@ -1,4 +1,17 @@
-<h1 style="padding-top:100px">Edit</h1>
-<% provide(:card_add, 'Update') %>
-<%= render partial: 'shared/card_edit_form', locals: { card: @card, project: @project } %>
-<%= link_to 'Back', card_path(@card) %>
+<div class="note-container">
+  <div class="note">
+    <h2 class="caedit-mark">Markdownで好きなように書いてみよう</h2>
+    <%= link_to 'Back', card_path(@card), class: "back" %>
+    <% provide(:card_add, 'Update') %>
+    <%= render partial: 'shared/card_edit_form', locals: { card: @card, project: @project } %>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+<script>
+  $(function() {
+    $('#edit').keyup(function() {
+        var html = marked($(this).val());
+        $('#mark-preview').html(html);
+    });
+  });
+</script>

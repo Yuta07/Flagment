@@ -4,17 +4,34 @@
 
 @charset "utf-8";
 
-.caform{
-  width: 80%;
+/*Project・Card 共通*/
+
+.caform, .caedit-top{
   margin: 0 auto;
+  .label{
+    display: inherit;
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
   .field{
+    font-size: 1.1em;
+    line-height: 1.4;
+    padding: 3px 5px;
     width: 70%;
   }
+  .card-picture{
+    padding: 10px 0;
+  }
+}
+
+.caform{
+  width: 80%;
 }
 
 .pro-input{
   margin: 2px 0;
   .label{
+    display: inherit;
     font-size: 1.2em;
     line-height: 1.6;
   }
@@ -28,4 +45,46 @@
   font-size: 1.4em;
   margin-top: 12px;
   width: 100px;
+}
+
+/*Card-Edit*/
+
+h2.caedit-mark{
+  display: inline-block;
+  width: 80%;
+  padding: 5px 0 10px 100px;
+  text-align: center;
+}
+
+.caedit-top{
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+.caedit-bottom{
+  display: flex;
+  padding-top: 30px;
+  margin-bottom: 20px;
+  border-top: 2px #009999 solid;
+  .mark{
+    border: none;
+    background: none;
+    resize: none;
+    width: 47%;
+    height: 70vh;
+    padding: 1%;
+    margin: 0 2% 0 1%;
+    font-size: 1.2em;
+    &:focus{
+      outline: 0;
+      border: 2px solid #ff9600;
+      border-radius: 4px;
+      box-shadow:4px 4px 4px 2px #949292;
+    }
+  }
+}
+
+#mark-preview{
+  width: 47%;
+  margin-right: 1%;
 }

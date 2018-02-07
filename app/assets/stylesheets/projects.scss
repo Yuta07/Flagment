@@ -54,6 +54,8 @@ h2.show-pro{
       font-size: 1.3em;
       &:hover{
         color: #ff9600;
+        border-bottom: 1px solid #ff9600;
+        padding-bottom: 2px;
         transition: 0.4s;
       }
     }

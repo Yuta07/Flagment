@@ -72,14 +72,14 @@
   min-height: 100vh;
   .note{
     padding:120px 1% 5%;
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
-    padding-left: 1%;
     .scratch-search{
       display: flex;
       justify-content: space-around;
       align-items: flex-start;
       margin-bottom: 60px;
+      width: 100%;
       .search-form{
         width: 50%;
         h2{
@@ -87,7 +87,7 @@
           padding-bottom: 14px;
         }
         .search-box{
-          width: 52%;
+          width: 50%;
           height: 30px;
           padding: 6px;
           font-size: 1em;
@@ -103,7 +103,7 @@
         }
       }
       .cate-form{
-        width: 48%;
+        width: 50%;
         padding: 0 1%;
         margin-top: 1%;
         line-height: 24px;
@@ -130,7 +130,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      margin-left: 1%;
+      margin-left: 4%;
       .add-text{
         display: inline-block;
         width: 100%;
