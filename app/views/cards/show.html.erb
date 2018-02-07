@@ -2,18 +2,22 @@
 <div class="note-container">
   <div class="note">
     <div class="card-show">
-      <h2><%= @card.subject %></h2>
-      <% if @card.card_picture? %>
-        <p class="pro-image"><%= image_tag @card.card_picture.url, :size => "130x130" %></p>
-      <% else %>
-        <p class="pro-image"><%= image_tag 'default.png', :size => "130x130" %></p>
-      <% end %>
-      <%= qiita_markdown(@card.content) %>
-      <h2><%= link_to "Edit", edit_card_path(@card) %></h2>
-      <% if current_user?(@card.user) %>
-        <h2><%= link_to "Delete", @card, method: :delete, data: { confirm: "Are you sure?" } %></h2>
-      <% end %>
-      <%= link_to 'Back', project_path(@project) %>
+      <div class="card-left">
+        <h2 class="show-sub"><%= @card.subject %></h2>
+        <% if @card.card_picture? %>
+          <p class="cashow-image"><%= image_tag @card.card_picture.url, :size => "200x200" %></p>
+        <% else %>
+          <p class="cashow-image"><%= image_tag 'default.png', :size => "200x200" %></p>
+        <% end %>
+        <%= link_to "Edit", edit_card_path(@card), class: "back cashow-link" %>
+        <% if current_user?(@card.user) %>
+          <%= link_to "Delete", @card, method: :delete, data: { confirm: "Are you sure?" }, class: "back cashow-link" %>
+        <% end %>
+        <%= link_to 'Back', project_path(@project), class: "back cashow-link" %>
+      </div>
+      <div class="ca-markdown">
+        <%= qiita_markdown(@card.content) %>
+      </div>
     </div>
   </div>
 </div>

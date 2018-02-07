@@ -1,13 +1,19 @@
 <%= form_for(card, url: card_path) do |f| %>
   <%= render 'shared/errors', object: f.object %>
-  <!-- subject -->
-  <%= f.label :subject %>
-  <%= f.text_field :subject %>
-  <p class="card-picture">
-    <%= f.file_field :card_picture, accept: 'image/jpeg,image/jpg,image/gif,image/png',id: "file" %>
-    <div id="preview"></div>
-  </p>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.submit yield(:card_add), class: "btn btn-primary", data:{disable_with:'Update'} %>
+  <div class="caedit-top">
+    <!-- subject -->
+    <div class="card-input">
+      <%= f.label :subject, class: "label" %>
+      <%= f.text_field :subject, class: "field" %>
+      <p class="card-picture">
+        <%= f.file_field :card_picture, accept: 'image/jpeg,image/jpg,image/gif,image/png',id: "file" %>
+        <div id="preview"></div>
+      </p>
+    </div>
+  </div>
+  <div class="caedit-bottom">
+    <%= f.text_area :content, id: "edit", class: "mark", placeholder: "こちらからMarkdownで書いてください" %>
+    <div id="mark-preview"></div>
+  </div>
+  <%= f.submit yield(:card_add), class: "submit-btn", data:{disable_with:'Update'} %>
 <% end %>

@@ -30,8 +30,8 @@
     width: 130px;
   }
   p.pro-name, p.card-subject{
-    padding: 10px 10px;
-    height: 49px;
+    padding: 5px 10px;
+    height: 32px;
     width: 150px;
     white-space: nowrap;
     overflow: hidden;
@@ -57,15 +57,21 @@
     li.cate-eachlist{
       padding-left: 4px;
       font-weight: 600;
+      color: #696363;
     }
   }
   p.pro-time, p.card-time{
     position: absolute;
-    bottom: 5px;
-    left: 15px;
+    left: 10px;
     margin-bottom: 5px;
     font-weight: 600;
-    color: #000000;
+    color: #696363;
+  }
+  p.pro-time{
+    bottom: 5px;
+  }
+  p.card-time{
+    bottom: 0;
   }
 }
 

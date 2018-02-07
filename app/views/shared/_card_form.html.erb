@@ -2,14 +2,14 @@
   <div class="caform">
     <%= render 'shared/errors', object: f.object %>
     <!-- subject -->
-    <div class="pro-input">
+    <div class="card-input">
       <%= f.label :subject, class: "label" %>
       <%= f.text_field :subject, class: "field" %>
+      <p class="card-picture">
+        <%= f.file_field :card_picture, accept: 'image/jpeg,image/jpg,image/gif,image/png', id: "cafile" %>
+        <div id="capreview"></div>
+      </p>
     </div>
-    <p class="card-picture">
-      <%= f.file_field :card_picture, accept: 'image/jpeg,image/jpg,image/gif,image/png', id: "cafile" %>
-      <div id="capreview"></div>
-    </p>
     <%= f.submit yield(:card_add), class: "submit-btn", data:{disable_with:'Resist'} %>
   </div>
 <% end %>

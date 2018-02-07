@@ -1,3 +1,38 @@
 // Place all the styles related to the Cards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.back{
+  color: #928a8a;
+  font-weight: 550;
+  font-size: 1.3em;
+  &:hover{
+    color: #ff9600;
+    border-bottom: 1px solid #ff9600;
+    padding-bottom: 2px;
+    transition: 0.4s;
+  }
+}
+
+.card-show{
+  width: 100%;
+  display: flex;
+  .card-left{
+    float: left;
+    margin-right: 8%;
+    h2.show-sub{
+      font-size: 1.8em;
+      padding: 10px 0;
+      display: inline-block;
+    }
+    .cashow-link{
+      padding: 6px 10px;
+    }
+    .cashow-image{
+      padding: 30px 0;
+      display: table-cell;
+    }
+  }
+  .ca-markdown{
+  }
+}

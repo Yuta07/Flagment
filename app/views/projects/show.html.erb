@@ -21,7 +21,7 @@
         <% if current_user?(@project.user) %>
           <%= link_to "Delete", @project, class:"pro-link", method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
-        <%= link_to "Back", root_path, class:"pro-link" %>
+        <%= link_to "Back", root_path, class:"pro-link", class: "back" %>
       </div>
     </div>
     <!--  Project-title_search機能  -->

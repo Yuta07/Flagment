@@ -9,7 +9,6 @@
         <p class="pro-image"><%= image_tag 'default.png', :size => "130x130" %></p>
       <% end %>
     </div>
-    <% end %>
     <% unless pro.categories.blank? %>
       <ul class="cate-list"><% pro.categories.each do |category| %>
           <li class="cate-eachlist"><%= category.name %></li>
@@ -18,5 +17,6 @@
     <p class="pro-time">
       Updated <%= time_ago_in_words(pro.updated_at) %> ago
     </p>
+    <% end %>
   </div>
 <% end %>
