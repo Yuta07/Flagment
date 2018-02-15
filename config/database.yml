@@ -49,6 +49,5 @@ test:
 #
 production:
   <<: *default
-  database: FmScratch_production
-  username: FmScratch
-  password: <%= ENV['Flagment_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: utf8

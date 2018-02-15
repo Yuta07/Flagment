@@ -25,10 +25,10 @@ class UsersController < ApplicationController
     @user.set_image(file)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      flash[:info] = "Eメールをチェックしてください"
       redirect_to root_url
     else
-      flash.now[:error] = "Account creation failure"
+      flash.now[:error] = "アカウントの作成に失敗しました"
       render 'home/index'
     end
   end
@@ -38,17 +38,17 @@ class UsersController < ApplicationController
     file = params[:user][:user_image]
     @user.set_image(file)
     if @user.update_attributes(user_params)
-      flash[:success]="Update your account"
+      flash[:success]="アカウントを更新しました"
       redirect_to @user
     else
-      flash[:error] = "Account update failure"
+      flash[:error] = "アカウントの更新に失敗しました"
       render 'edit'
     end
   end
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = "ユーザーを削除しました"
     redirect_to root_url
   end
 
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   def correct_user
     @user=User.find(params[:id])
     unless current_user?(@user)
-      flash[:error] = "You are not correct user"
+      flash[:error] = "ユーザーが正しくありません"
       redirect_to root_url
     end
   end

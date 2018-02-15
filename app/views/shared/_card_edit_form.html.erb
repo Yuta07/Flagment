@@ -15,5 +15,5 @@
     <%= f.text_area :content, id: "edit", class: "mark", placeholder: "こちらからMarkdownで書いてください" %>
     <div id="mark-preview"></div>
   </div>
-  <%= f.submit yield(:card_add), class: "submit-btn", data:{disable_with:'Update'} %>
+  <%= f.submit yield(:card_add), class: "submit-btn edit-btn", data:{disable_with:'Update'} %>
 <% end %>

@@ -26,11 +26,11 @@ class CardsController < ApplicationController
       t.card_picture = params[:card][:card_picture]
     end
     if @card.save
-      flash[:success] = "Card created."
+      flash[:success] = "カードを作成しました"
       redirect_to request.referrer || root_url
     else
       @project = @card.project
-      flash[:error] = "Card creation failure. Please try to create again."
+      flash[:error] = "カードの作成に失敗しました。もう一度行ってください"
       redirect_to project_url(@project)
     end
   end
@@ -38,10 +38,10 @@ class CardsController < ApplicationController
   def update
     @card = current_user.cards.find(params[:id])
     if @card.update_attributes(card_params)
-      flash[:success] = "Card was updated"
+      flash[:success] = "カードを更新しました"
       redirect_to card_url(@card)
     else
-      flash[:error] = "Card update failure"
+      flash[:error] = "カードの更新に失敗しました"
       redirect_to edit_card_url(@card)
     end
   end
@@ -49,10 +49,10 @@ class CardsController < ApplicationController
   def destroy
     @project = @card.project
     if @card.destroy!
-      flash[:success] = "Card was deleted."
+      flash[:success] = "カードを削除しました"
       redirect_to project_url(@project)
     else
-      flash[:error] = "Card delete failure."
+      flash[:error] = "カードの削除に失敗しました"
       redirect_to edit_card_url(@card)
     end
   end
