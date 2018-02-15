@@ -52,13 +52,13 @@
 h2.caedit-mark{
   display: inline-block;
   width: 80%;
-  padding: 5px 0 10px 100px;
+  padding: 5px 0 10px 80px;
   text-align: center;
 }
 
 .caedit-top{
   width: 40%;
-  margin-bottom: 20px;
+  margin: -40px auto 25px;
 }
 
 .caedit-bottom{
@@ -66,15 +66,19 @@ h2.caedit-mark{
   padding-top: 30px;
   margin-bottom: 20px;
   border-top: 2px #009999 solid;
+  font-size: 1.2em;
   .mark{
     border: none;
     background: none;
     resize: none;
     width: 47%;
-    height: 70vh;
-    padding: 1%;
-    margin: 0 2% 0 1%;
+    height: 100vh;
+    padding: 1% 1.5%;
     font-size: 1.2em;
+    line-height: 1.2;
+    &:first-child {
+  			border-right: 2px #009999 solid;
+  		}
     &:focus{
       outline: 0;
       border: 2px solid #ff9600;
@@ -84,7 +88,14 @@ h2.caedit-mark{
   }
 }
 
+.edit-btn{
+  font-size: 2em;
+  margin: 50px 40% 70px;
+  width: 120px;
+  display: inline-block;
+}
+
 #mark-preview{
   width: 47%;
-  margin-right: 1%;
+  padding: 1% 1.5%;
 }

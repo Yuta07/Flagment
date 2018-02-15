@@ -3,8 +3,8 @@
     <h2 class="caedit-mark">Markdownで好きなように書いてみよう</h2>
     <%= link_to 'Back', card_path(@card), class: "back" %>
     <% provide(:card_add, 'Update') %>
-    <%= render partial: 'shared/card_edit_form', locals: { card: @card, project: @project } %>
   </div>
+  <%= render partial: 'shared/card_edit_form', locals: { card: @card, project: @project } %>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
 <script>

@@ -22,15 +22,15 @@ class ProjectsController < ApplicationController
     project = current_user.projects.build(project_params)
     category_list = params[:category_list].split(',') if !params[:category_list].nil?
     if category_list.size > 10
-      flash[:error] = "Project creation failure. Tag is up to 10"
+      flash[:error] = "プロジェクトの作成に失敗しました。タグは10個までです"
       redirect_to root_url
     else
       if project.save
         project.save_categories(category_list) if !params[:category_list].nil?
-        flash[:success] = "Project cration successfully"
+        flash[:success] = "プロジェクトを作成しました"
         redirect_to project_url(project)
       else
-        flash[:error] = "Project creation failure. Title is necessary"
+        flash[:error] = "プロジェクトの作成に失敗しました。タイトルは必須です"
         redirect_to root_url
       end
     end
@@ -40,15 +40,15 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     category_list = params[:category_list].split(",") if !params[:category_list].nil?
     if category_list.size > 10
-      flash[:error] = "Project update failure. Tag is up to 10"
+      flash[:error] = "プロジェクトの更新に失敗しました。タグは10個までです"
       redirect_to project_url
     else
       if @project.update_attributes(project_params)
         @project.save_categories(category_list)
-        flash[:success] = "Project was updated"
+        flash[:success] = "プロジェクトを更新しました"
         redirect_to project_url
       else
-        flash[:error] = "Project update failure. Title is necessary"
+        flash[:error] = "プロジェクトの更新に失敗しました。タイトルは必須です"
         redirect_to project_url
       end
     end
@@ -56,10 +56,10 @@ class ProjectsController < ApplicationController
 
   def destroy
     if @project.destroy
-      flash[:success] = "Project was deleted"
+      flash[:success] = "プロジェクトを削除しました"
       redirect_to root_url
     else
-      flash[:error] = "Project delete failure."
+      flash[:error] = "プロジェクトの削除に失敗しました"
       redirect_to project_url
     end
   end

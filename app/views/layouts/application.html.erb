@@ -17,10 +17,10 @@
       <%= render partial: 'common/header' %>
       <% flash.each do |message_type,message| %>
         <div class="alert alert-<%= message_type %>" id="alert-box"><%= message %>
+          <div id="fa-cancel">
+            <i class="fa fa-times cancel" aria-hidden="true"></i>
+          </div>
         </div>
-        <!-- <div class="cancel-box" id="fa-cancel">
-          <i class="fa fa-times cancel" aria-hidden="true"></i>
-        </div> -->
       <% end %>
       <%= yield %>
       <%= render partial: 'common/footer' %>
@@ -32,5 +32,6 @@
       console.log("ddd");
     </script>
     <%= javascript_include_tag "preview", 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "error", 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
